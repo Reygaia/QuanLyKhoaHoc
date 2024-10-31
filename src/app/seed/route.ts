@@ -1,12 +1,12 @@
-import bcrypt from "bcrypt";
 /*
 import {db} from "@vercel/postgres";
+import bcrypt from "bcrypt";
+import {Client} from 'pg';
+import {Pool} from 'pg';
 */
 import {createClient} from '@supabase/supabase-js';
 import {NextResponse} from 'next/server';
 
-import {Client} from 'pg';
-import {Pool} from 'pg';
 
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
