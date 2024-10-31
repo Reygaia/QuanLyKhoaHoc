@@ -113,19 +113,19 @@ async function insertSampleData() {
 }
 
 
+
 export async function GET(req: Request) {
     try {
-        // Your logic here
         const tables = await createTables();
         const samples = await insertSampleData();
-
         const result = `${tables} | ${samples}`;
+        console.log(req);
 
-        return result;
-
-        /* return NextResponse.json({user, message: 'Success'});*/
+        // Wrap `result` in NextResponse.json() to ensure a Response type is returned
+        return NextResponse.json({ result, message: 'Success' });
     } catch (error) {
-        return NextResponse.error(); // Return an error response if something goes wrong
+        console.error('Error:', error);
+        return NextResponse.json({ error: 'An error occurred' }, { status: 500 });
     }
 }
 
