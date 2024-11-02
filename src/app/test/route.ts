@@ -12,12 +12,12 @@ async function readTable(){
 }
 
 // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
-export async function GET(req:Request, res:Response){
+
+export async function GET(req: Request) {
     try {
         const users = await readTable();
-        return NextResponse.json(users); // Use appropriate response type for your framework
+        return NextResponse.json(users); // Respond with the JSON of users
     } catch (error: unknown) {
-        // Type assertion to get the error message correctly
         const errorMessage = (error as Error).message || 'Unknown error occurred';
         console.error('Error in GET:', errorMessage);
         return NextResponse.json({ error: errorMessage }, { status: 500 });
