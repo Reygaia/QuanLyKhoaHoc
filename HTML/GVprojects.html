@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="GVprojects.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <button class="menu-toggle"><img src="Img/list_12232288.png" alt=""></button>
+            <div class="settings-icon"><img src="Img/gear_10887995.png" alt="" id="settings-icon">
+                <div class="drop-menu" id="settings-menu">
+                    <div class="menu-list"  id="mode">Chế độ sáng <img src="Img/summer_13742912.png" alt=""></div>
+                    <div class="menu-list">Đăng xuất <img src="Img/sign-out_5949866.png" alt=""></div>
+                </div>
+            </div>
+        </header>
+        <div class="content-container">
+            <nav class="sidebar">
+                <div class="menu-item">
+                    <span class="icon"><img src="Img/home_12237107.png" alt=""></span> <a href="GVhome.html" class="btn">Trang chủ</a>
+                </div>
+                <div class="menu-item">
+                    <span class="icon"><img src="Img/candidate_18276434.png" alt=""></span> <a href="GVprofile.html" class="btn">Hồ sơ cá nhân</a>
+                </div>
+                <div class="menu-item active">
+                    <span class="icon"><img src="Img/book_10907215.png" alt=""></span> <a href="GVprojects.html" class="btn">Đồ án</a>
+                </div>
+            </nav>
+            <div class="content">
+
+            <div class="search">
+                <input type="text" placeholder="Tìm kiếm đồ án ..." class="search-bar">
+            </div>
+
+            <div class="project-list">
+                <section>
+                    <h3>Đồ án đang được thực hiện</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tên</th>
+                                <th>Mô tả</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="GVprocess.html" class="list">Đồ án 1</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="">Đồ án 2</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><a href="">Đồ án 3</a></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const content = document.querySelector('.content');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            content.classList.toggle('hidden');
+        });
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach((item) => {
+            item.addEventListener('click', () => {
+            menuItems.forEach((i) => i.classList.remove('active'));
+            item.classList.add('active');
+            });
+        });
+        const settingsIcon = document.getElementById('settings-icon');
+        const settingsMenu = document.getElementById('settings-menu');
+
+        settingsIcon.addEventListener('click', () => {
+            settingsMenu.style.display = 
+                settingsMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!settingsIcon.contains(event.target) && !settingsMenu.contains(event.target)) {
+                settingsMenu.style.display = 'none';
+            }
+        });
+        settingsIcon.addEventListener('click', () => {
+            settingsMenu.classList.toggle('show');
+        });
+        // Mode
+        const modeBtn = document.getElementById('mode');
+        const body = document.body;
+
+        modeBtn.addEventListener('click', () => {
+            body.classList.toggle('dark')
+        })
+    </script>
+</body>
+</html>

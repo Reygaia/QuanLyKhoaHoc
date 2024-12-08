@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="QLmaneger.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <button class="menu-toggle"><img src="Img/list_12232288.png" alt=""></button>
+            <div class="settings-icon"><img src="Img/gear_10887995.png" alt="" id="settings-icon">
+                <div class="drop-menu" id="settings-menu">
+                    <div class="menu-list"  id="mode">Chế độ sáng <img src="Img/summer_13742912.png" alt=""></div>
+                    <div class="menu-list">Đăng xuất <img src="Img/sign-out_5949866.png" alt=""></div>
+                </div>
+            </div>
+        </header>
+        <div class="content-container">
+            <nav class="sidebar">
+                <div class="menu-item">
+                    <span class="icon"><img src="Img/home_12237107.png" alt=""></span> <a href="QLhome.html" class="btn">Trang chủ</a>
+                </div>
+                <div class="menu-item  active">
+                    <span class="icon"><img src="Img/candidate_18276434.png" alt=""></span> <a href="QLmanager.html" class="btn">Quản lý tài khoản</a>
+                </div>
+                <div class="menu-item">
+                    <span class="icon"><img src="Img/book_10907215.png" alt=""></span> <a href="QLprojects.html" class="btn">Đồ án</a>
+                </div>
+                <div class="menu-item">
+                    <span class="icon"><img src="Img/book_10907215.png" alt=""></span> <a href="QLactive.html" class="btn">Đồ án</a>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="search">
+                    <input type="text" class="search-bar" placeholder="Tìm kiếm sinh viên ...">
+                </div>
+                <div class="cre-user">
+                    <div class="option-buttons">
+                        <button id="studentBtn" class="toggle-btn">Tạo tài khoản sinh viên</button>
+                        <button id="teacherBtn" class="toggle-btn">Tạo tài khoản giảng viên</button>
+                    </div>
+                    <!-- SV -->
+                    <div id="Svform" class="">
+                        <h3>Tạo tài khoản sinh viên</h3>
+                    <div class="form-group">
+                        <label for="name">Tên sinh viên:</label>
+                        <input type="text" id="name" placeholder="Nhập tên sinh viên">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="student-name">Mã số sinh viên</label>
+                            <input type="text" id="student-name" placeholder="Nhập mã số sinh viên">
+                        </div>
+                        <div class="form-group">
+                            <label for="student-id">Niên khóa:</label>
+                            <input type="text" id="student-id" placeholder="Nhập niên khóa">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="faculty">Khoa:</label>
+                            <input type="text" id="faculty" placeholder="Nhập khoa">
+                        </div>
+                        <div class="form-group">
+                            <label for="major">Chuyên ngành:</label>
+                            <input type="text" id="major" placeholder="Nhập chuyên ngành">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="faculty">Lớp</label>
+                            <input type="text" id="faculty" placeholder="Nhập lớp">
+                        </div>
+                        <div class="form-group">
+                            <label for="major">Hệ đào tạo</label>
+                            <input type="text" id="major" placeholder="Nhập hệ đào tạo">
+                        </div>
+                    </div>
+                    <div class="submit-container">
+                        <button type="button" class="submit-btn" id="submit-btn">Tạo tài khoản</button>
+                    </div>
+                    <div id="successMessage" class="toast success-toast">
+                        <p>Tạo thành công!</p>
+                        <a id="back-btn" href="SVprojects.html" class="back-link">Quay lại</a> 
+                    </div>
+                </div>
+                <!-- GV -->
+                <div id="Gvform" class="">
+                    <h3>Tạo tài khoản giảng viên</h3>
+                <div class="form-group">
+                    <label for="name">Tên giảng viên:</label>
+                    <input type="text" id="name" placeholder="Nhập tên giảng viên">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="student-name">Mã số giảng viên</label>
+                        <input type="text" id="student-name" placeholder="Nhập mã số giảng viên">
+                    </div>
+                    <div class="form-group">
+                        <label for="student-id">Học vấn:</label>
+                        <input type="text" id="student-id" placeholder="Nhập niên khóa">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="faculty">Khoa:</label>
+                        <input type="text" id="faculty" placeholder="Nhập khoa">
+                    </div>
+                    <div class="form-group">
+                        <label for="major">Chuyên ngành:</label>
+                        <input type="text" id="major" placeholder="Nhập chuyên ngành">
+                    </div>
+                </div>
+                <div class="submit-container">
+                    <button type="button" class="submit-btn" id="submit-btn">Tạo tài khoản</button>
+                </div>
+                <div id="successMessage" class="toast success-toast">
+                    <p>Tạo thành công!</p>
+                    <a id="back-btn" href="SVprojects.html" class="back-link">Quay lại</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const content = document.querySelector('.content');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            content.classList.toggle('hidden');
+        });
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach((item) => {
+            item.addEventListener('click', () => {
+            menuItems.forEach((i) => i.classList.remove('active'));
+            item.classList.add('active');
+            });
+        });
+        const settingsIcon = document.getElementById('settings-icon');
+        const settingsMenu = document.getElementById('settings-menu');
+
+        settingsIcon.addEventListener('click', () => {
+            settingsMenu.style.display = 
+                settingsMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!settingsIcon.contains(event.target) && !settingsMenu.contains(event.target)) {
+                settingsMenu.style.display = 'none';
+            }
+        });
+        settingsIcon.addEventListener('click', () => {
+            settingsMenu.classList.toggle('show');
+        });
+        // Mode
+        const modeBtn = document.getElementById('mode');
+        const body = document.body;
+
+        modeBtn.addEventListener('click', () => {
+            body.classList.toggle('dark')
+        })
+        const studentBtn = document.getElementById('studentBtn');
+        const teacherBtn = document.getElementById('teacherBtn');
+        const studentForm = document.getElementById('Svform');
+        const teacherForm = document.getElementById('Gvform');
+
+        studentForm.classList.add('hiddenform');
+        teacherForm.classList.add('hiddenform');
+
+        studentBtn.addEventListener('click', () => {
+            studentForm.classList.remove('hiddenform');
+            teacherForm.classList.add('hiddenform');
+            studentBtn.classList.add('activeform');
+            teacherBtn.classList.remove('activeform');
+        });
+
+        teacherBtn.addEventListener('click', () => {
+            teacherForm.classList.remove('hiddenform');
+            studentForm.classList.add('hiddenform');
+            teacherBtn.classList.add('activeform');
+            studentBtn.classList.remove('activeform');
+        });
+
+    </script>
+</body>
+</html>
