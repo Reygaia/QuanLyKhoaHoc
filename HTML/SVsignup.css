@@ -139,16 +139,16 @@ body.dark .content-container{
 .drop-menu {
     width: 200px;
     position: absolute;
-    top: 100%; /* Hiển thị ngay bên dưới biểu tượng */
-    right: 0; /* Canh phải */
+    top: 100%; 
+    right: 0; 
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
-    display: none; /* Mặc định ẩn */
-    z-index: 1000; /* Đảm bảo menu không bị che */
+    display: none; 
+    z-index: 1000; 
     opacity: 0;
-    transform: translateY(-10px); /* Di chuyển lên */
+    transform: translateY(-10px); 
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -377,4 +377,62 @@ table th {
     bottom: 0;
     pointer-events: none; /* Để hiệu ứng pháo hoa không chặn các thao tác với các phần tử khác */
     z-index: 1001;
+}
+
+.choice-file{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+.custom-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-upload label {
+    cursor: pointer;
+}
+.custom-upload label {
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none; 
+}
+.list-file {
+    margin-top: 10px;
+}
+
+.list-file ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-file li {
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-file li button {
+    margin-left: 10px;
+    padding: 2px 5px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
 }

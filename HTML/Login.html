@@ -30,5 +30,32 @@
             </form>
         </div>
     </div>
+    <div id="snow-container"></div>
+    <script>
+        const snowContainer = document.getElementById('snow-container');
+
+        // Hàm tạo bông tuyết
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄'; // Biểu tượng bông tuyết
+
+            // Vị trí ngẫu nhiên và kích thước ngẫu nhiên
+            const size = Math.random() * 10 + 5; // Kích thước từ 5px đến 15px
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.fontSize = size + 'px';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // Thời gian rơi từ 2-5s
+
+            snowContainer.appendChild(snowflake);
+
+            // Xóa bông tuyết sau khi nó rơi hết
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        // Tạo bông tuyết mỗi 100ms
+        setInterval(createSnowflake, 100);
+    </script>
 </body>
 </html>

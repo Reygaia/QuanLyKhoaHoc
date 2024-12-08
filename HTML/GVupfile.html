@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="SVupfile.css">
+    <link rel="stylesheet" href="GVupfile.css">
 </head>
 <body>
     <div class="main-container">
@@ -23,29 +23,25 @@
         <div class="content-container">
             <nav class="sidebar">
                 <div class="menu-item">
-                    <span class="icon"><img src="Img/home_12237107.png" alt=""></span> <a href="SVhome.html" class="btn">Trang chủ</a>
+                    <span class="icon"><img src="Img/home_12237107.png" alt=""></span> <a href="GVhome.html" class="btn">Trang chủ</a>
                 </div>
                 <div class="menu-item">
-                    <span class="icon"><img src="Img/candidate_18276434.png" alt=""></span> <a href="SVprofile.html" class="btn">Hồ sơ cá nhân</a>
+                    <span class="icon"><img src="Img/candidate_18276434.png" alt=""></span> <a href="GVprofile.html" class="btn">Hồ sơ cá nhân</a>
                 </div>
                 <div class="menu-item active">
-                    <span class="icon"><img src="Img/book_10907215.png" alt=""></span> <a href="SVprojects.html" class="btn">Đồ án</a>
+                    <span class="icon"><img src="Img/book_10907215.png" alt=""></span> <a href="GVprojects.html" class="btn">Đồ án</a>
                 </div>
             </nav>
             <div class="content">
 
             <div class="search">
                 <input type="text" placeholder="Tìm kiếm đồ án ..." class="search-bar">
-                <a href="SVsignup.html" class="button-link">Đăng kí đồ án</a>
             </div>
 
             <div class="upload-container">
-                <h2>Nộp file</h2>
+                <h2>Nội dung báo cáo</h2>
                 <div class="list-file">
-                    <div class="choice-file">
-                        <label for="fileInput" class="custom-upload">Chọn tệp</label>
-                        <input type="file" id="fileInput" multiple>
-                    </div>
+                    <p>Danh sách file</p>
                     <ul id="fileList"></ul>
                 </div>
                 <div class="form-group">
@@ -53,7 +49,7 @@
                     <textarea id="description" placeholder="Nhập mô tả đề tài"></textarea>
                 </div>
                 <div class="upbtn">
-                    <a href="SVprocess.html">Nộp</a>
+                    <a href="GVprocess.html">Quay lại</a>
                 </div>
                 
             </div>
@@ -101,38 +97,21 @@
         const fileInput = document.getElementById('fileInput');
         const fileList = document.getElementById('fileList');
         const fileCount = document.getElementById('fileCount');
+        const existingFiles = [
+            
+        ];
+        const existingDescription = "Đây là mô tả báo cáo của tuần này.";
 
-        fileInput.addEventListener('change', () => {
-            const files = fileInput.files;
-            fileList.innerHTML = '';  // Xóa danh sách tệp cũ
-
-            // Hiển thị số lượng tệp đã chọn
-            fileCount.textContent = `Số lượng tệp đã chọn: ${files.length}`;
-
-            // Duyệt qua từng tệp đã chọn
-            Array.from(files).forEach((file) => {
-                const li = document.createElement('li');
-                li.textContent = file.name;  // Hiển thị tên tệp
-
-                // Thêm nút Xóa vào tệp
-                const removeButton = document.createElement('button');
-                removeButton.textContent = 'Xóa';
-                removeButton.addEventListener('click', () => {
-                    li.remove();  // Xóa phần tử li khi nhấn nút Xóa
-                    updateFileCount();  // Cập nhật lại số lượng tệp sau khi xóa
-                });
-
-                // Thêm nút Xóa vào li và li vào danh sách
-                li.appendChild(removeButton);
-                fileList.appendChild(li);
-            });
+        // Hiển thị danh sách file
+        existingFiles.forEach((fileName) => {
+            const li = document.createElement("li");
+            li.textContent = fileName;
+            fileList.appendChild(li);
         });
 
-        // Cập nhật lại số lượng tệp khi có sự thay đổi
-        function updateFileCount() {
-            const files = fileInput.files;
-            fileCount.textContent = `Số lượng tệp đã chọn: ${files.length}`;
-        }
+        // Hiển thị nội dung mô tả
+        const description = document.getElementById("description");
+        description.value = existingDescription
         document.querySelector("textarea").addEventListener("input", function () {
             this.style.height = "auto";  // Đặt lại chiều cao trước khi tính toán lại
             this.style.height = (this.scrollHeight) + "px";  // Điều chỉnh chiều cao theo nội dung

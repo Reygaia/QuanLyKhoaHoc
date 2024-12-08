@@ -186,7 +186,6 @@ body.dark .content-container{
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
-    
 }
 
 .search-bar {
@@ -248,9 +247,15 @@ input[type="file"] {
     display: none; 
 }
 .list-file {
-    margin-top: 10px;
+    margin: 10px;
+    min-height: 40px;
 }
-
+.list-file p{
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .list-file ul {
     list-style: none;
     padding: 0;

@@ -69,6 +69,13 @@
                     <label for="description">Mô tả đề tài:</label>
                     <textarea id="description" placeholder="Nhập mô tả đề tài"></textarea>
                 </div>
+                <div class="list-file">
+                    <div class="choice-file">
+                        <label for="fileInput" class="custom-upload">Chọn tệp</label>
+                        <input type="file" id="fileInput" multiple>
+                    </div>
+                    <ul id="fileList"></ul>
+                </div>                
                 <div class="submit-container">
                     <button type="button" class="submit-btn" id="submit-btn">Gửi</button>
                 </div>
@@ -127,25 +134,42 @@
             this.style.height = "auto"; 
             this.style.height = (this.scrollHeight) + "px"; 
         });
-        document.getElementById('submit-btn').addEventListener('click', function () {
-            const name = document.getElementById('name').value.trim();
-            const faculty = document.getElementById('faculty').value.trim();
-            const major = document.getElementById('major').value.trim();
-            const studentName = document.getElementById('student-name').value.trim();
-            const studentId = document.getElementById('student-id').value.trim();
-            const description = document.getElementById('description').value.trim();
-            const successMessage = document.getElementById('successMessage');
+        document.addEventListener('DOMContentLoaded', () => {
+            const submitBtn = document.getElementById('submit-btn');
+            const inputs = document.querySelectorAll('input, textarea');
+            const fileInput = document.getElementById('fileInput');
 
-            if (name && faculty && major && studentName && studentId && description) {
-                // Hiển thị thông báo thành công
-                successMessage.classList.add("show");
-                setTimeout(() => {
-                    successMessage.classList.remove("show");
-                }, 3000); // Thông báo sẽ ẩn sau 3 giây
-            } else {
-                alert("Bạn chưa nhập đủ các mục!");
-            }
+            // Hàm kiểm tra thông tin
+            const validateForm = () => {
+                const name = document.getElementById('name').value.trim();
+                const faculty = document.getElementById('faculty').value.trim();
+                const major = document.getElementById('major').value.trim();
+                const studentName = document.getElementById('student-name').value.trim();
+                const studentId = document.getElementById('student-id').value.trim();
+                const description = document.getElementById('description').value.trim();
+                const fileSelected = fileInput.files.length > 0;
+
+                // Nếu tất cả các trường đều có giá trị và có ít nhất 1 tệp
+                if (name && faculty && major && studentName && studentId && description && fileSelected) {
+                    submitBtn.disabled = false; // Mở khóa nút
+                } else {
+                    submitBtn.disabled = true; // Khóa nút
+                }
+            };
+
+            // Lắng nghe sự kiện input trên tất cả các trường nhập
+            inputs.forEach(input => {
+                input.addEventListener('input', validateForm);
+            });
+
+            // Lắng nghe sự kiện thay đổi tệp
+            fileInput.addEventListener('change', validateForm);
+
+            // Khóa nút gửi mặc định khi tải trang
+            validateForm();
         });
+
+
         // Tạo canvas và lấy context
             const canvas = document.getElementById('fireworks');
             const ctx = canvas.getContext('2d');
@@ -235,6 +259,30 @@
                     errorMessage.style.display = 'none'; // Ẩn lỗi ngay khi bắt đầu nhập
                 });
             });
+            const fileInput = document.getElementById('fileInput');
+            const fileList = document.getElementById('fileList');
+
+            fileInput.addEventListener('change', () => {
+                const files = Array.from(fileInput.files); // Lấy danh sách các tệp được chọn
+                fileList.innerHTML = ''; // Xóa danh sách cũ
+
+                // Hiển thị từng tệp trong danh sách
+                files.forEach((file, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = file.name; // Hiển thị tên tệp
+
+                    // Nút xóa để loại bỏ tệp khỏi danh sách hiển thị
+                    const removeButton = document.createElement('button');
+                    removeButton.textContent = 'Xóa';
+                    removeButton.addEventListener('click', () => {
+                        li.remove(); // Xóa phần tử li khỏi giao diện
+                    });
+
+                    li.appendChild(removeButton);
+                    fileList.appendChild(li);
+                });
+            });
+
     </script>
 </body>
 </html>
