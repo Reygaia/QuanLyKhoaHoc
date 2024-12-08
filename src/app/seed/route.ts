@@ -20,6 +20,17 @@ if (!supabaseUrl || !serviceRoleKey || !supabaseKey) {
 
 const supabase = createClient(supabaseUrl, serviceRoleKey);
 
+//nguoi dung ten, ma id, email, sdt, ma nguoi dung vd: GV-123, 21806...
+//dang nhap nguoi dung - da cap quyen roi
+//tham gia nhom - do he thong quan li
+//dang ki de tai - boi sinh vien
+//duyet de tai - boi giao vien
+//bao cao moi tuan - boi sinh vien
+//nop file - luu vao he thong
+//ket thuc do an
+
+
+
 async function createTables() {
     const sql = `
         CREATE TABLE IF NOT EXISTS APP_USERS(
