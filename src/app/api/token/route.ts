@@ -41,7 +41,7 @@ async function loginUser(email: string, password: string) {
                             });
 
     if (error) {
-        console.error('Login error: ', error.message);
+        console.error('Page error: ', error.message);
         return null;
     }
 
