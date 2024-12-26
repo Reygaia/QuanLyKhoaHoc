@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useEffect, useState, ReactNode } from "react";
-import { usePathname } from "next/navigation"; // Import usePathname từ Next.js
+import { usePathname, useRouter } from "next/navigation"; // Thêm useRouter để điều hướng
 import "./Layout.css";
 import { Play } from 'next/font/google'; // Dùng next/font thay vì @next/font
 
 const playFont = Play({
     subsets: ['latin'],
-    weight: ['400', '700'], // Điều chỉnh độ đậm nếu cần
+    weight: ['400', '700'],
 });
 
 interface LayoutProps {
@@ -15,9 +15,10 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-    const [role, setRole] = useState<"SV" | "GV" | "QL">("GV"); // Đổi cái trong ngoặc tròn để chuyển đổi role layout
-    const [isDarkMode, setIsDarkMode] = useState<boolean>(false); // State to track dark mode
-    const pathname = usePathname(); // Lấy URL hiện tại
+    const [role, setRole] = useState<"SV" | "GV" | "QL">("GV");
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+    const pathname = usePathname();
+    const router = useRouter(); // Khởi tạo router
 
     useEffect(() => {
         const sidebar = document.querySelector(".sidebar");
@@ -54,7 +55,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         // Toggle dark mode
         const toggleDarkMode = () => {
-            setIsDarkMode((prev) => !prev); // Toggle dark mode state
+            setIsDarkMode((prev) => !prev);
             body.classList.toggle("dark");
         };
 
@@ -62,13 +63,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         document.addEventListener("click", handleClickOutside);
         modeBtn?.addEventListener("click", toggleDarkMode);
 
-        // Cleanup event listeners on unmount
         return () => {
             settingsIcon?.removeEventListener("click", toggleSettingsMenu);
             document.removeEventListener("click", handleClickOutside);
             modeBtn?.removeEventListener("click", toggleDarkMode);
         };
     }, []);
+
+    const handleLogout = () => {
+        router.push("/dashboard/Login"); // Điều hướng về trang Login
+    };
 
     const menuItems = {
         SV: [
@@ -105,9 +109,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                                 alt="dark mode" 
                             />
                         </div>
-                        <div className="menu-list">
+                        <div className="menu-list" onClick={handleLogout} style={{ cursor: "pointer" }}>
                             Đăng xuất <img src="/signout.png" alt="sign out" />
-                            <link rel="stylesheet" href="/dashboard/Login" />
                         </div>
                     </div>
                 </div>
