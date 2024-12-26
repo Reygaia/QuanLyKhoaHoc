@@ -8,6 +8,8 @@ import Layout from "@dashboard/Layout/page";
 export default function SVSignupProject() {
     const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
     const [formValid, setFormValid] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [showError, setShowError] = useState(false);
 
     useEffect(() => {
         const validateForm = () => {
@@ -18,9 +20,12 @@ export default function SVSignupProject() {
             const studentId = (document.getElementById("student-id") as HTMLInputElement)?.value.trim();
             const description = (document.getElementById("description") as HTMLTextAreaElement)?.value.trim();
 
-            setFormValid(
-                !!(name && faculty && major && studentName && studentId && description && selectedFiles.length > 0)
-            );
+            const isValid = !!(name && faculty && major && studentName && studentId && description && selectedFiles.length > 0);
+            setFormValid(isValid);
+
+            if (isValid) {
+                setShowError(false); // Ẩn thông báo lỗi nếu hợp lệ
+            }
         };
 
         const inputs = document.querySelectorAll("input, textarea");
@@ -28,20 +33,22 @@ export default function SVSignupProject() {
             input.addEventListener("input", validateForm);
         });
 
-        validateForm(); // Gọi ngay khi component được mount
+        const fileInput = document.getElementById("fileInput");
+        fileInput?.addEventListener("change", validateForm);
+
+        validateForm();
 
         return () => {
             inputs.forEach((input) => {
                 input.removeEventListener("input", validateForm);
             });
+            fileInput?.removeEventListener("change", validateForm);
         };
     }, [selectedFiles]);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const files = Array.from(event.target.files || []);
         setSelectedFiles((prevFiles) => [...prevFiles, ...files]);
-
-        // Reset giá trị của input file
         event.target.value = "";
     };
 
@@ -49,15 +56,22 @@ export default function SVSignupProject() {
         setSelectedFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
     };
 
+    const handleSubmit = () => {
+        if (formValid) {
+            setShowSuccess(true); // Hiện thông báo thành công
+            setShowError(false); // Ẩn thông báo lỗi
+        } else {
+            setShowSuccess(false);
+            setShowError(true); // Hiện thông báo lỗi nếu biểu mẫu không hợp lệ
+        }
+    };
+
     return (
         <>
             <Head>
-                <meta charSet={"UTF-8"} />
+                <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Đăng ký đồ án</title>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
             </Head>
             <Layout>
                 <div className="search">
@@ -107,19 +121,21 @@ export default function SVSignupProject() {
                                 </li>
                             ))}
                         </ul>
-                        <p id="fileCount">Số lượng tệp đã chọn: {selectedFiles.length}</p>
                     </div>
                     <div className="submit-container">
-                        <button type="button" className="submit-btn" id="submit-btn" disabled={!formValid}>Gửi</button>
+                        <button type="button" className="submit-btn" id="submit-btn" disabled={!formValid} onClick={handleSubmit}>Gửi</button>
                     </div>
-                    <div id="successMessage" className="toast success-toast">
-                        <p>Đăng ký thành công!</p>
-                        <a id="back-btn" href="SVProjects" className="back-link">Quay lại</a>
-                    </div>
-
-                    <div id="errorMessage" className="toast error-toast">
-                        <p>Thông tin chưa đầy đủ!</p>
-                    </div>
+                    {showSuccess && (
+                        <div id="successMessage" className="toast success-toast">
+                            <p>Đăng ký thành công!</p>
+                            <a id="back-btn" href="SVProjects" className="back-link">Quay lại</a>
+                        </div>
+                    )}
+                    {showError && (
+                        <div id="errorMessage" className="toast error-toast">
+                            <p>Thông tin chưa đầy đủ!</p>
+                        </div>
+                    )}
                 </div>
             </Layout>
         </>

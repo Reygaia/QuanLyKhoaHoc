@@ -38,6 +38,15 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
+body.dark .form-container{
+    background-color: #000000;
+}
+body.dark .form-group input{
+    background-color: #373737;
+}
+body.dark .form-group textarea{
+    background-color: #373737;
+}
 .main-container {
     display: flex;
     width: 100%;

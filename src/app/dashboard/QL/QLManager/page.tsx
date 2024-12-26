@@ -39,12 +39,12 @@ export default function QLManager() {
                 <title>Quản lý tài khoản</title>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Play&display=swap"
+                    rel="stylesheet"
+                />
             </Head>
             <Layout>
-                <div className="search">
-                    <input type="text" className="search-bar" placeholder="Tìm kiếm tài khoản..."/>
-                </div>
                 <div className="cre-user">
                     <div className="option-buttons">
                         <button id="studentBtn" className="toggle-btn">Tạo tài khoản sinh viên</button>
@@ -52,7 +52,7 @@ export default function QLManager() {
                     </div>
                     {/*Form SV*/}
                     <div id="Svform" className="">
-                        <h3>Tạo tài khoản sinh viên</h3>
+                        <h2>Tạo tài khoản sinh viên</h2>
                         <div className="form-group">
                             <label htmlFor="name">Tên sinh viên:</label>
                             <input type="text" id="name" placeholder="VD: Nguyễn Văn A"/>

@@ -3,13 +3,20 @@
 import React, { useEffect, useState, ReactNode } from "react";
 import { usePathname } from "next/navigation"; // Import usePathname từ Next.js
 import "./Layout.css";
+import { Play } from 'next/font/google'; // Dùng next/font thay vì @next/font
+
+const playFont = Play({
+    subsets: ['latin'],
+    weight: ['400', '700'], // Điều chỉnh độ đậm nếu cần
+});
 
 interface LayoutProps {
     children: ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-    const [role, setRole] = useState<"SV" | "GV" | "QL">("SV"); // Đổi cái trong ngoặc tròn để chuyển đổi role layout
+    const [role, setRole] = useState<"SV" | "GV" | "QL">("GV"); // Đổi cái trong ngoặc tròn để chuyển đổi role layout
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(false); // State to track dark mode
     const pathname = usePathname(); // Lấy URL hiện tại
 
     useEffect(() => {
@@ -22,10 +29,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         const body = document.body;
 
         // Toggle sidebar visibility
-        if (menuToggle) {
+        if (menuToggle && sidebar && content) {
             menuToggle.addEventListener("click", () => {
-                if (sidebar) sidebar.classList.toggle("hidden");
-                if (content) content.classList.toggle("fullsize");
+                sidebar.classList.toggle("hidden");
+                content.classList.toggle("fullsize");
             });
         }
 
@@ -47,6 +54,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         // Toggle dark mode
         const toggleDarkMode = () => {
+            setIsDarkMode((prev) => !prev); // Toggle dark mode state
             body.classList.toggle("dark");
         };
 
@@ -64,37 +72,42 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
     const menuItems = {
         SV: [
-            { link: "/dashboard/SV/SVHome", text: "Trang chủ", icon: "/homepage.png" },
-            { link: "/dashboard/SV/SVProfile", text: "Hồ sơ sinh viên", icon: "/profile.png" },
-            { link: "/dashboard/SV/SVProjects", text: "Đồ án", icon: "/project-book.png" },
+            { link: "/dashboard/SV/SVHome", text: "Trang chủ", icon: "/home.png" },
+            { link: "/dashboard/SV/SVProfile", text: "Hồ sơ sinh viên", icon: "/avt.png" },
+            { link: "/dashboard/SV/SVProjects", text: "Đồ án", icon: "/checklist.png" },
         ],
         GV: [
-            { link: "/dashboard/GV/GVHome", text: "Trang chủ", icon: "/homepage.png" },
-            { link: "/dashboard/GV/GVProfile", text: "Hồ sơ giảng viên", icon: "/profile.png" },
-            { link: "/dashboard/GV/GVProjects", text: "Quản lý đồ án", icon: "/project-management.png" },
+            { link: "/dashboard/GV/GVHome", text: "Trang chủ", icon: "/home.png" },
+            { link: "/dashboard/GV/GVProfile", text: "Hồ sơ giảng viên", icon: "/avt.png" },
+            { link: "/dashboard/GV/GVProjects", text: "Quản lý đồ án", icon: "/checklist.png" },
         ],
         QL: [
-            { link: "/dashboard/QL/QLHome", text: "Trang chủ", icon: "/homepage.png" },
-            { link: "/dashboard/QL/QLManager", text: "Quản lý tài khoản", icon: "/account-management.png" },
-            { link: "/dashboard/QL/QLContent", text: "Thông tin đồ án", icon: "/info-project.png" },
-            { link: "/dashboard/QL/QLActive", text: "Hoạt động", icon: "/active.png" },
+            { link: "/dashboard/QL/QLHome", text: "Trang chủ", icon: "/home.png" },
+            { link: "/dashboard/QL/QLManager", text: "Quản lý tài khoản", icon: "/avt.png" },
+            { link: "/dashboard/QL/QLContent", text: "Thông tin đồ án", icon: "/checklist.png" },
+            { link: "/dashboard/QL/QLActive", text: "Hoạt động", icon: "/blog.png" },
         ],
     };
 
     return (
-        <div className="main-container">
+        <div className={`${playFont.className} main-container`}>
             <header className="header">
                 <button className="menu-toggle">
-                    <img src="/menu-list.png" alt="" />
+                    <img src="/list.png" alt="menu" />
                 </button>
                 <div className="settings-icon">
-                    <img src="/settings.png" alt="" id="settings-icon" />
+                    <img src="/gear.png" alt="settings" id="settings-icon" />
                     <div className="drop-menu" id="settings-menu">
                         <div className="menu-list" id="mode">
-                            Chế độ tối / sáng <img src="/dark-mode.png" alt="" />
+                            Chế độ tối / sáng{" "}
+                            <img 
+                                src={isDarkMode ? "/moon.png" : "/summer.png"} 
+                                alt="dark mode" 
+                            />
                         </div>
                         <div className="menu-list">
-                            Đăng xuất <img src="/sign-out.png" alt="" />
+                            Đăng xuất <img src="/signout.png" alt="sign out" />
+                            <link rel="stylesheet" href="/dashboard/Login" />
                         </div>
                     </div>
                 </div>
@@ -104,12 +117,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     {menuItems[role].map((item, index) => (
                         <div
                             key={index}
-                            className={`menu-item ${
-                                pathname === item.link ? "active" : "" // So sánh pathname với item.link
-                            }`}
+                            className={`menu-item ${pathname === item.link ? "active" : ""}`}
                         >
                             <span className="icon">
-                                <img src={item.icon} alt="" />
+                                <img src={item.icon} alt={item.text} />
                             </span>
                             <a href={item.link} className="btn">
                                 {item.text}

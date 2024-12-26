@@ -112,7 +112,7 @@ body.dark .content-container{
 }
 
 .icon img {
-    height: 36px;
+    height: px;
 }
 
 .content-container {
@@ -383,7 +383,10 @@ table th {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 10px;
+    padding: 10px 0px 20px 0px;
+}
+#fileCount{
+    padding: 10px 0px;
 }
 .custom-upload {
     display: inline-block;

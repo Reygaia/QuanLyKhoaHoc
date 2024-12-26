@@ -114,7 +114,9 @@ body.dark .content-container{
 
 
 .icon img {
-    height: 36px;
+    height: 40px;
+    width: 40px;
+    object-fit: contain; 
 }
 
 .content-container {

@@ -1,37 +1,38 @@
-"use client"; // Chỉ định đây là client component
+"use client";
 
 import React, { useEffect } from "react";
 import "./Login.css";
 import Head from "next/head";
+import { Play } from 'next/font/google'; // Dùng next/font thay vì @next/font
+
+const playFont = Play({
+    subsets: ['latin'],
+    weight: ['400'], // Điều chỉnh độ đậm nếu cần
+});
 
 export default function Login() {
     useEffect(() => {
         const snowContainer = document.getElementById("snow-container");
 
-        // Hàm tạo bông tuyết
         function createSnowflake() {
             const snowflake = document.createElement("div");
             snowflake.classList.add("snowflake");
-            snowflake.textContent = "❄"; // Biểu tượng bông tuyết
+            snowflake.textContent = "❄";
 
-            // Vị trí ngẫu nhiên và kích thước ngẫu nhiên
-            const size = Math.random() * 10 + 5; // Kích thước từ 5px đến 15px
+            const size = Math.random() * 10 + 5;
             snowflake.style.left = Math.random() * 100 + "vw";
             snowflake.style.fontSize = size + "px";
-            snowflake.style.animationDuration = Math.random() * 3 + 2 + "s"; // Thời gian rơi từ 2-5s
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
 
             snowContainer?.appendChild(snowflake);
 
-            // Xóa bông tuyết sau khi nó rơi hết
             setTimeout(() => {
                 snowflake.remove();
             }, 5000);
         }
 
-        // Tạo bông tuyết mỗi 100ms
         const snowflakeInterval = setInterval(createSnowflake, 100);
 
-        // Dọn dẹp khi component bị tháo ra khỏi DOM
         return () => clearInterval(snowflakeInterval);
     }, []);
 
@@ -41,11 +42,8 @@ export default function Login() {
                 <meta charSet={"UTF-8"} />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Đăng nhập</title>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet"/>
             </Head>
-            <div>
+            <div className={`${playFont.className}`}> {/* Áp dụng font chữ */}
                 <div className="login-container">
                     <img src="/logo-dai-hoc-hutech_012634748.png" alt="" />
                     <div className="login-box">

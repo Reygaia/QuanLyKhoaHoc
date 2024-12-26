@@ -38,6 +38,19 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
+body.dark .project-list section{
+    background-color: #000000;
+}
+body.dark .project-list table th{
+    background-color: #373737;
+}
+body.dark .project-list table tr{
+    background-color: #373737;
+    color: #ccc;
+}
+body.dark .project-list table td a{
+    color: #ccc;
+}
 .main-container {
     display: flex;
     width: 100%;

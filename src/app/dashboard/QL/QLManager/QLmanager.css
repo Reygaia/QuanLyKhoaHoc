@@ -38,6 +38,17 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
+body.dark .toggle-btn.activeform{
+    background-color: #6d6d6d;
+}
+body.dark .toggle-btn {
+    background-color: #000000;
+    color: #ccc;
+}
+body.dark .form-group input{
+    background-color: #373737;
+    color: #ccc;
+}
 .main-container {
     display: flex;
     width: 100%;
@@ -176,6 +187,10 @@ body.dark .content-container{
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
     border: solid 20px #ffffff  ;
 }
+body.dark .cre-user{
+    background-color: #373737;
+}
+
 .content .hidden{
     transition: margin-left 0.3s ease-in-out;
     transform: translateX(-80%)

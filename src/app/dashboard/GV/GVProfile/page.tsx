@@ -19,7 +19,7 @@ export default function GVProfile() {
             <Layout>
                 <div className="profile-card">
                     <div className="avatar">
-                        <img src="/user-avatar.png" alt="Avatar"/>
+                        <img src="/profile.png" alt="Avatar"/>
                     </div>
                     <div className="info">
                         <h2>THÔNG TIN CÁ NHÂN</h2>
