@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     font-family: 'Play', sans-serif;
@@ -50,6 +51,14 @@ body.dark .project-list table tr{
 }
 body.dark .project-list table td a{
     color: #ccc;
+}
+body.dark .search-bar{
+    background-color: #373737;
+}
+body.dark .button-link{
+    background-color: #373737;
+    color: #f0f0f0;
+    border: #f0f0f0 solid 1px;
 }
 .main-container {
     display: flex;
@@ -211,35 +220,37 @@ body.dark .project-list table td a{
     border-radius: 5px;
     font-family: 'Play',sans-serif;
 }
+/**/
 
-.register-btn {
-    padding: 10px 20px;
-    font-size: 16px;
+/*Nút đăng ký đồ án*/
+.button-link {
+    display: inline-block;
     background-color: #ffffff;
-    color: #000000;
-    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
     transition: background-color 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Play',sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.register-btn:hover {
-    background-color: #45a049;
+.button-link:hover {
+    background-color: #C4DFDF;
 }
+/**/
 
-.settings-icon {
-    font-size: 20px;
-    cursor: pointer;
-}
-
+/*Danh sách đồ án*/
 .project-list section {
     margin-bottom: 20px;
     background-color: #fff;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-height: 300px; 
+    overflow-y: auto;  
+    margin-bottom: 20px;
 }
 
 .project-list h3 {
@@ -264,22 +275,10 @@ table th {
 }
 table a{
     text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
     color: #000000;
 }
-
-.button-link {
-    display: inline-block;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.button-link:hover {
-    background-color: #45a049;
+h2{
+    font-weight: 700;
 }

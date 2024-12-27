@@ -7,7 +7,6 @@ body {
     color: #000000;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-<<<<<<< HEAD
 body.dark{
     background-color: #1E1E1E  ;
 }
@@ -142,17 +141,10 @@ body.dark .form-group select{
 }
 
 .icon img {
-<<<<<<< Updated upstream:src/app/dashboard/SVProjectRegister/SVProjectRegister.css
-    height: 36px;
-=======
-<<<<<<< HEAD
-    height: 36px;
-=======
+
     height: 40px;
     width: 40px;
     object-fit: contain;
->>>>>>> 4a8c743c67d9a548b295de8dd09ce38b418b02f3
->>>>>>> Stashed changes:src/app/dashboard/SV/SVSignupProject/SVSignupProject.css
 }
 
 .content-container {
@@ -179,28 +171,16 @@ body.dark .form-group select{
 .drop-menu {
     width: 200px;
     position: absolute;
-<<<<<<< Updated upstream:src/app/dashboard/SVProjectRegister/SVProjectRegister.css
-    top: 100%; /* Hiển thị ngay bên dưới biểu tượng */
-    right: 0; /* Canh phải */
-=======
     top: 100%; 
     right: 0; 
->>>>>>> Stashed changes:src/app/dashboard/SV/SVSignupProject/SVSignupProject.css
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
-<<<<<<< Updated upstream:src/app/dashboard/SVProjectRegister/SVProjectRegister.css
     display: none; /* Mặc định ẩn */
     z-index: 1000; /* Đảm bảo menu không bị che */
     opacity: 0;
     transform: translateY(-10px); /* Di chuyển lên */
-=======
-    display: none; 
-    z-index: 1000; 
-    opacity: 0;
-    transform: translateY(-10px); 
->>>>>>> Stashed changes:src/app/dashboard/SV/SVSignupProject/SVSignupProject.css
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -430,9 +410,6 @@ table th {
     bottom: 0;
     pointer-events: none; /* Để hiệu ứng pháo hoa không chặn các thao tác với các phần tử khác */
     z-index: 1001;
-<<<<<<< Updated upstream:src/app/dashboard/SVProjectRegister/SVProjectRegister.css
-}
-=======
 }
 
 .choice-file{
@@ -496,7 +473,7 @@ input[type="file"] {
     border: none;
     border-radius: 3px;
 }
-<<<<<<< HEAD
+
 /* Thêm vào trong file SVSignupProject.css hoặc một file riêng cho modal */
 .modal-overlay {
     position: fixed;
@@ -544,7 +521,6 @@ input[type="file"] {
     overflow: hidden;
     resize: none;
 }
-=======
 
 /*DARK MODE*/
 
