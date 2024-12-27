@@ -51,6 +51,9 @@ body.dark .project-list table tr{
 body.dark .project-list table td a{
     color: #ccc;
 }
+body.dark .search-bar {
+    background-color: #373737;
+}
 .main-container {
     display: flex;
     width: 100%;
@@ -211,7 +214,22 @@ body.dark .project-list table td a{
     border-radius: 5px;
     font-family: 'Play',sans-serif;
 }
+.button-link {
+    display: inline-block;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.button-link:hover {
+    background-color: #45a049;
+}
 .register-btn {
     padding: 10px 20px;
     font-size: 16px;
@@ -265,21 +283,4 @@ table th {
 table a{
     text-decoration: none;
     color: #000000;
-}
-
-.button-link {
-    display: inline-block;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.button-link:hover {
-    background-color: #45a049;
 }

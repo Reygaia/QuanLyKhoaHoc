@@ -7,7 +7,6 @@ body {
     color: #000000;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-<<<<<<< HEAD
 body.dark{
     background-color: #1E1E1E  ;
 }
@@ -39,35 +38,29 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
+body.dark .form-container{
+    background-color: #000000;
+}
 body.dark .form-group input{
     background-color: #373737;
-    color: #ccc;
 }
 body.dark .form-group textarea{
     background-color: #373737;
 }
-body.dark .form-container{
-    background-color: #000000;
-}
-body.dark .choice-file label{
-    background-color: #373737;
-    color:#ccc ;
-}
-body.dark .submit-container button{
-    background-color: #373737;
-    color: #ccc;
-    border: #CFCFCF 1px solid;
-}
-body.dark .submit-container button:hover{
-    background-color: #373737;
-    color: #ccc;
-}
 body.dark .form-group select{
     background-color: #373737;
-    color: #f0f0f0;
+    color: white;
 }
-=======
->>>>>>> 4a8c743c67d9a548b295de8dd09ce38b418b02f3
+body.dark #approve-btn{
+    background-color: #373737;
+    color: white;
+    border: #ccc solid 1px;
+}
+body.dark #reject-btn{
+    background-color: #373737;
+    color: white;
+    border: #ccc solid 1px;
+}
 .main-container {
     display: flex;
     width: 100%;
@@ -81,10 +74,10 @@ body.dark .form-group select{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; 
-    z-index: 1000; 
-    background-color: #ffffff; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
 }
 
@@ -142,17 +135,7 @@ body.dark .form-group select{
 }
 
 .icon img {
-<<<<<<< Updated upstream:src/app/dashboard/SVProjectRegister/SVProjectRegister.css
     height: 36px;
-=======
-<<<<<<< HEAD
-    height: 36px;
-=======
-    height: 40px;
-    width: 40px;
-    object-fit: contain;
->>>>>>> 4a8c743c67d9a548b295de8dd09ce38b418b02f3
->>>>>>> Stashed changes:src/app/dashboard/SV/SVSignupProject/SVSignupProject.css
 }
 
 .content-container {
@@ -179,28 +162,16 @@ body.dark .form-group select{
 .drop-menu {
     width: 200px;
     position: absolute;
-<<<<<<< Updated upstream:src/app/dashboard/SVProjectRegister/SVProjectRegister.css
     top: 100%; /* Hiển thị ngay bên dưới biểu tượng */
     right: 0; /* Canh phải */
-=======
-    top: 100%; 
-    right: 0; 
->>>>>>> Stashed changes:src/app/dashboard/SV/SVSignupProject/SVSignupProject.css
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
-<<<<<<< Updated upstream:src/app/dashboard/SVProjectRegister/SVProjectRegister.css
     display: none; /* Mặc định ẩn */
     z-index: 1000; /* Đảm bảo menu không bị che */
     opacity: 0;
     transform: translateY(-10px); /* Di chuyển lên */
-=======
-    display: none; 
-    z-index: 1000; 
-    opacity: 0;
-    transform: translateY(-10px); 
->>>>>>> Stashed changes:src/app/dashboard/SV/SVSignupProject/SVSignupProject.css
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -231,91 +202,6 @@ body.dark .form-group select{
 .content .hidden{
     transition: margin-left 0.3s ease-in-out;
     transform: translateX(-80%)
-}
-
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    
-}
-
-.search-bar {
-    flex-grow: 1;
-    padding: 10px;
-    font-size: 16px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: 'Play',sans-serif;
-}
-
-.register-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Play',sans-serif;
-}
-
-.register-btn:hover {
-    background-color: #C4DFDF;
-}
-
-.settings-icon {
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.project-list section {
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    
-}
-
-.project-list h3 {
-    margin-top: 0;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table th, table td {
-    text-align: left;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-table th {
-    background-color: #f0f0f0;
-    font-weight: bold;
-}
-.button-link {
-    display: inline-block;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.button-link:hover {
-    background-color: #C4DFDF;
 }
 .form-container {
     background-color: #fff;
@@ -348,8 +234,8 @@ table th {
     box-sizing: border-box;
     font-family: 'Play', sans-serif;
     min-height: 50px;
-    overflow: hidden; 
-    resize: none; 
+    overflow: hidden;
+    resize: none;
 }
 
 .form-row {
@@ -381,15 +267,15 @@ table th {
 }
 
 .submit-btn:hover {
-    background-color: #C4DFDF;
+    background-color: #45a049;
 }
 .success-toast {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff; /* Màu nền */
-    color: black;
+    background-color: #4CAF50; /* Màu nền xanh */
+    color: white;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -406,7 +292,6 @@ table th {
     display: inline-block;
     padding: 8px 16px;
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: black;
     text-decoration: none;
     border-radius: 5px;
@@ -416,7 +301,7 @@ table th {
 }
 
 .back-link:hover {
-    background-color: #C4DFDF;
+    background-color: #0056b3;
 }
 #errorMessage p{
     color: red;
@@ -430,16 +315,13 @@ table th {
     bottom: 0;
     pointer-events: none; /* Để hiệu ứng pháo hoa không chặn các thao tác với các phần tử khác */
     z-index: 1001;
-<<<<<<< Updated upstream:src/app/dashboard/SVProjectRegister/SVProjectRegister.css
-}
-=======
 }
 
 .choice-file{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0px 10px 0px;
+    padding: 0px 10px;
 }
 .custom-upload {
     display: inline-block;
@@ -451,25 +333,21 @@ table th {
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
-    transition: background-color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .custom-upload label {
     cursor: pointer;
 }
-/*.custom-upload label {*/
-/*    cursor: pointer;*/
-/*}*/
-.custom-upload:hover {
-    background-color: #C4DFDF;
+.custom-upload label {
+    cursor: pointer;
 }
 
 input[type="file"] {
-    display: none; 
+    display: none;
 }
 .list-file {
-    margin-top: 10px;
+    margin: 10px 0px 30px 0px;
 }
 
 .list-file ul {
@@ -486,51 +364,25 @@ input[type="file"] {
     justify-content: space-between;
     align-items: center;
 }
-
-.list-file li button {
-    margin-left: 10px;
-    padding: 2px 5px;
-    cursor: pointer;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 3px;
-}
-<<<<<<< HEAD
-/* Thêm vào trong file SVSignupProject.css hoặc một file riêng cho modal */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+.form-actions{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    justify-content: space-around;
+    margin-bottom: 20px;
 }
-
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-}
-
-.modal-content button {
-    margin-top: 20px;
+.btn-approve,
+.btn-reject{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-}
-
-.modal-content button:hover {
-    background-color: #0056b3;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Play',sans-serif;
+    min-width: 100px;
+    text-align: center;
 }
 .form-group select{
     width: 100%;
@@ -544,42 +396,3 @@ input[type="file"] {
     overflow: hidden;
     resize: none;
 }
-=======
-
-/*DARK MODE*/
-
-body.dark{
-    background-color: #1E1E1E  ;
-}
-body.dark .header{
-    background-color: #0d0d0d  ;
-}
-body.dark .sidebar {
-    background-color: #1E1E1E  ;
-    color: #f0f0f0;
-}
-body.dark .menu-item.active{
-    background-color: #454545 ;
-}
-body.dark .menu-item:hover{
-    background-color: #3D3D3D  ;
-}
-body.dark .drop-menu {
-    background-color: #1E1E1E  ;
-    color: #CFCFCF ;
-}
-body.dark .drop-menu .menu-list:hover {
-    background-color: #3D3D3D  ;
-}
-body.dark .content{
-    background-color: #1E1E1E ;
-    color: #CFCFCF;
-    border: solid 20px #373737  ;
-}
-body.dark .content-container{
-    background-color: #373737;
-}
-
-/**/
->>>>>>> 4a8c743c67d9a548b295de8dd09ce38b418b02f3
->>>>>>> Stashed changes:src/app/dashboard/SV/SVSignupProject/SVSignupProject.css

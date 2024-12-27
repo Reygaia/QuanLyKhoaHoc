@@ -38,18 +38,22 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
-body.dark .project-list section{
+body.dark .upload-container {
     background-color: #000000;
+    color: #ccc;
 }
-body.dark .project-list table th{
+body.dark .upload-container #description{
     background-color: #373737;
 }
-body.dark .project-list table tr{
+body.dark .upload-container table tr{
     background-color: #373737;
     color: #ccc;
 }
 body.dark .project-list table td a{
     color: #ccc;
+}
+body.dark .search-bar{
+    background-color: #373737;
 }
 .main-container {
     display: flex;
@@ -211,62 +215,6 @@ body.dark .project-list table td a{
     border-radius: 5px;
     font-family: 'Play',sans-serif;
 }
-
-.register-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Play',sans-serif;
-}
-
-.register-btn:hover {
-    background-color: #45a049;
-}
-
-.settings-icon {
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.project-list section {
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.project-list h3 {
-    margin-top: 0;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table th, table td {
-    text-align: left;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-table th {
-    background-color: #f0f0f0;
-    font-weight: bold;
-
-}
-table a{
-    text-decoration: none;
-    color: #000000;
-}
-
 .button-link {
     display: inline-block;
     background-color: #ffffff;
@@ -282,4 +230,111 @@ table a{
 
 .button-link:hover {
     background-color: #45a049;
+}
+.upload-container{
+    background-color: white;
+    color: #000000;
+    font-family: 'Play',sans-serif;
+    padding: 10px 20px;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.choice-file{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+.custom-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-upload label {
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+.list-file {
+    margin-top: 10px;
+}
+
+.list-file ul {
+    list-style: none;
+    padding: 0;
+}
+
+.upload-container .list-file li {
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-file li button {
+    margin-left: 10px;
+    padding: 2px 5px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+.upbtn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dadada;
+}
+.form-group {
+    margin: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+    min-height: 50px;
+    overflow: hidden;
+    resize: none;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
 }
