@@ -9,11 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/env": "^15.1.2",
     "@supabase/supabase-js": "^2.46.1",
     "@vercel/postgres": "^0.10.0",
     "bcrypt": "^5.1.1",
-    "dotenv": "^16.4.7",
     "formidable": "^3.5.2",
     "jsonwebtoken": "^9.0.2",
     "next": "15.0.2",

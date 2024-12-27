@@ -38,33 +38,14 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
-body.dark .content .form-container h2{
+body.dark .form-container{
     background-color: #000000;
-    color: #ffffff;
 }
 body.dark .form-group input{
     background-color: #373737;
 }
 body.dark .form-group textarea{
     background-color: #373737;
-}
-body.dark .form-group select{
-    background-color: #373737;
-    color: white;
-}
-body.dark #approve-btn{
-    background-color: #373737;
-    color: white;
-    border: #ccc solid 1px;
-}
-body.dark #reject-btn{
-    background-color: #373737;
-    color: white;
-    border: #ccc solid 1px;
-}
-body.dark .form-container{
-    background-color: #000000;
-    color: white;
 }
 .main-container {
     display: flex;
@@ -352,7 +333,7 @@ input[type="file"] {
     display: none;
 }
 .list-file {
-    margin: 10px 0px 30px 0px;
+    margin-top: 10px;
 }
 
 .list-file ul {
@@ -388,16 +369,4 @@ input[type="file"] {
     font-family: 'Play',sans-serif;
     min-width: 100px;
     text-align: center;
-}
-.form-group select{
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-family: 'Play', sans-serif;
-    min-height: 50px;
-    overflow: hidden;
-    resize: none;
 }

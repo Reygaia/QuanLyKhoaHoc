@@ -7,33 +7,35 @@ body {
     color: #000000;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/*Dark Mode*/
 body.dark{
-    background-color: #1E1E1E  ;
+    background-color: #1E1E1E;
 }
 body.dark .header{
-    background-color: #0d0d0d  ;
+    background-color: #0d0d0d;
 }
 body.dark .sidebar {
-    background-color: #1E1E1E  ;
+    background-color: #1E1E1E;
     color: #f0f0f0;
 }
 body.dark .menu-item.active{
-    background-color: #454545 ;
+    background-color: #454545;
 }
 body.dark .menu-item:hover{
-    background-color: #3D3D3D  ;
+    background-color: #3D3D3D;
 }
 body.dark .drop-menu {
-    background-color: #1E1E1E  ;
-    color: #CFCFCF ;
+    background-color: #1E1E1E;
+    color: #CFCFCF;
 }
 body.dark .drop-menu .menu-list:hover {
-    background-color: #3D3D3D  ;
+    background-color: #3D3D3D;
 }
 body.dark .content{
-    background-color: #1E1E1E ;
+    background-color: #1E1E1E;
     color: #CFCFCF;
-    border: solid 20px #373737  ;
+    border: solid 20px #373737;
 }
 body.dark .content-container{
     background-color: #373737;
@@ -41,6 +43,12 @@ body.dark .content-container{
 body.dark .project-list section{
     background-color: #000000;
     color: white;
+}
+body.dark .project-list section h3{
+    color: #f0f0f0;
+}
+body.dark td :hover {
+    background-color: #505050;
 }
 body.dark .project-list table th{
     background-color: #373737;
@@ -52,9 +60,12 @@ body.dark .project-list table tr{
 body.dark .project-list table td a{
     color: #ccc;
 }
-body.dark .search-bar {
+body.dark .search-bar{
     background-color: #373737;
+    color: #ccc;
 }
+/**/
+
 .main-container {
     display: flex;
     width: 100%;
@@ -215,38 +226,39 @@ body.dark .search-bar {
     border-radius: 5px;
     font-family: 'Play',sans-serif;
 }
-.button-link {
-    display: inline-block;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+/*.button-link {*/
+/*    display: inline-block;*/
+/*    background-color: #ffffff;*/
+/*    color: rgb(0, 0, 0);*/
+/*    padding: 10px 20px;*/
+/*    text-decoration: none;*/
+/*    border-radius: 5px;*/
+/*    font-size: 16px;*/
+/*    text-align: center;*/
+/*    transition: background-color 0.3s;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+/*}*/
 
-.button-link:hover {
-    background-color: #45a049;
-}
-.register-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Play',sans-serif;
-}
+/*.button-link:hover {*/
+/*    background-color: #C4DFDF;*/
+/*}*/
 
-.register-btn:hover {
-    background-color: #45a049;
-}
+/*.register-btn {*/
+/*    padding: 10px 20px;*/
+/*    font-size: 16px;*/
+/*    background-color: #ffffff;*/
+/*    color: #000000;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s;*/
+/*    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+/*    font-family: 'Play',sans-serif;*/
+/*}*/
+
+/*.register-btn:hover {*/
+/*    background-color: #45a049;*/
+/*}*/
 
 .settings-icon {
     font-size: 20px;
@@ -283,5 +295,10 @@ table th {
 }
 table a{
     text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
     color: #000000;
+}
+td :hover {
+    background-color: #C4DFDF;
 }

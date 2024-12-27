@@ -1,8 +1,9 @@
-"use client";
+"use client"; // Biến component thành client component
 
 import "./SVupfile.css";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
+// import React from "react";
 import Layout from "@dashboard/Layout/page";
 
 export default function SVUpfile() {
@@ -31,85 +32,6 @@ export default function SVUpfile() {
         setSelectedFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
     };
 
-    // Hàm xử lý gửi và xác nhận
-    const handleSubmit = () => {
-        const isConfirmed = window.confirm("Bạn có chắc chắn muốn nộp các tập tin này?");
-        if (isConfirmed) {
-            // Tiến hành gửi dữ liệu, ví dụ: điều hướng hoặc gọi API
-            alert("Đã nộp thành công!");
-            triggerFireworks(); // Hiển thị hiệu ứng pháo hoa khi nộp
-
-            // Ví dụ chuyển hướng đến trang khác:
-            window.location.href = "SVProcess"; // hoặc sử dụng Router nếu bạn sử dụng Next.js
-        } else {
-            alert("Hành động đã bị hủy.");
-        }
-    };
-
-    // Hàm tạo hiệu ứng pháo hoa
-    const triggerFireworks = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        document.body.appendChild(canvas);
-
-        const ctx = canvas.getContext("2d");
-
-        if (!ctx) return;
-
-        const particles: any[] = [];
-        const colors = ["#ff0044", "#ffbb00", "#00cc99", "#6600ff"];
-
-        class Particle {
-            constructor(public x: number, public y: number, public color: string) {
-                this.size = Math.random() * 5 + 1;
-                this.speedX = Math.random() * 3 - 1.5;
-                this.speedY = Math.random() * 3 - 1.5;
-            }
-            size: number;
-            speedX: number;
-            speedY: number;
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                this.size *= 0.98;
-            }
-
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        const createFirework = (x: number, y: number) => {
-            const count = 100;
-            for (let i = 0; i < count; i++) {
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                particles.push(new Particle(x, y, color));
-            }
-        };
-
-        createFirework(window.innerWidth / 2, window.innerHeight / 2);
-
-        const animate = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach((particle) => {
-                particle.update();
-                particle.draw();
-            });
-
-            // Loại bỏ các particle nhỏ
-            particles.filter(p => p.size > 0.5);
-
-            requestAnimationFrame(animate);
-        };
-
-        animate();
-    };
-
     return (
         <>
             <Head>
@@ -122,7 +44,7 @@ export default function SVUpfile() {
             </Head>
             <Layout>
                 <div className="search">
-                    <input type="text" placeholder="Tìm kiếm đồ án..." className="search-bar" />
+                    <input type="text" placeholder="Tìm kiếm đồ án..." className="search-bar"/>
                     <a href="SVSignupProject" className="button-link">Đăng kí đồ án</a>
                 </div>
                 <div className="upload-container">
@@ -147,7 +69,7 @@ export default function SVUpfile() {
                         <textarea id="description" placeholder="Nhập mô tả đề tài"></textarea>
                     </div>
                     <div className="upbtn">
-                        <button type="button" onClick={handleSubmit}>Nộp</button>
+                        <a href="SVProcess">Nộp</a>
                     </div>
                 </div>
             </Layout>

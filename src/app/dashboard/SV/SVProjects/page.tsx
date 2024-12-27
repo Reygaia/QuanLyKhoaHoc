@@ -23,8 +23,8 @@ export default function SVProjects() {
                 </div>
 
                 <div className="project-list">
-                <h2>Đồ án đang thực hiện</h2>
                     <section>
+                        <h3>Đồ án đang thực hiện</h3>
                         <table>
                             <thead>
                             <tr>
@@ -54,8 +54,9 @@ export default function SVProjects() {
                             </tbody>
                         </table>
                     </section>
-                    <h2>Đồ án đã hoàn thành</h2>
+
                     <section>
+                        <h3>Đồ án đã hoàn thành</h3>
                         <table>
                             <thead>
                             <tr>
@@ -79,67 +80,6 @@ export default function SVProjects() {
                             <tr>
                                 <td>
                                     <a href="SVProcess">Đồ án 3</a>
-                                </td>
-                                <td></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                    <h2>Đồ án đang đăng ký</h2>
-                    <section>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Tên</th>
-                                <th>Mô tả</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <a href="SVProcess">Đồ án 1</a>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="SVProcess">Đồ án 2</a>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="SVProcess">Đồ án 3</a>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="SVProcess">Đồ án 1</a>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="SVProcess">Đồ án 2</a>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="SVProcess">Đồ án 3</a>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="SVProcess">Đồ án 1</a>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="SVProcess">Đồ án 1</a>
                                 </td>
                                 <td></td>
                             </tr>

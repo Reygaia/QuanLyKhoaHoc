@@ -2,61 +2,68 @@
 
 import "./SVSignupProject.css";
 import Head from "next/head";
-import React, { useState, ChangeEvent } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "@dashboard/Layout/page";
-import { useRouter } from "next/navigation"; // Import useRouter để điều hướng
 
 export default function SVSignupProject() {
-    const [formData, setFormData] = useState({
-        name: "",
-        faculty: "",
-        major: "",
-        studentName: "",
-        studentId: "",
-        description: "",
-        projectLevel: "", // Thêm trường cho "Đồ án thuộc"
-    });
     const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
-    const [showSubmitSuccess, setShowSubmitSuccess] = useState(false); // Thêm state cho thông báo thành công khi gửi
-    const router = useRouter(); // Khởi tạo useRouter để điều hướng
+    const [formValid, setFormValid] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [showError, setShowError] = useState(false);
 
-    // Xử lý thay đổi input
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { id, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [id]: value.trim()
-        }));
-    };
+    useEffect(() => {
+        const validateForm = () => {
+            const name = (document.getElementById("name") as HTMLInputElement)?.value.trim();
+            const faculty = (document.getElementById("faculty") as HTMLInputElement)?.value.trim();
+            const major = (document.getElementById("major") as HTMLInputElement)?.value.trim();
+            const studentName = (document.getElementById("student-name") as HTMLInputElement)?.value.trim();
+            const studentId = (document.getElementById("student-id") as HTMLInputElement)?.value.trim();
+            const description = (document.getElementById("description") as HTMLTextAreaElement)?.value.trim();
 
-    // Xử lý thay đổi lựa chọn "Đồ án thuộc"
-    const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        const { id, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [id]: value
-        }));
-    };
+            const isValid = !!(name && faculty && major && studentName && studentId && description && selectedFiles.length > 0);
+            setFormValid(isValid);
 
-    // Xử lý thay đổi file
-    const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const files = Array.from(e.target.files || []);
+            if (isValid) {
+                setShowError(false); // Ẩn thông báo lỗi nếu hợp lệ
+            }
+        };
+
+        const inputs = document.querySelectorAll("input, textarea");
+        inputs.forEach((input) => {
+            input.addEventListener("input", validateForm);
+        });
+
+        const fileInput = document.getElementById("fileInput");
+        fileInput?.addEventListener("change", validateForm);
+
+        validateForm();
+
+        return () => {
+            inputs.forEach((input) => {
+                input.removeEventListener("input", validateForm);
+            });
+            fileInput?.removeEventListener("change", validateForm);
+        };
+    }, [selectedFiles]);
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const files = Array.from(event.target.files || []);
         setSelectedFiles((prevFiles) => [...prevFiles, ...files]);
+        event.target.value = "";
     };
 
-    // Xử lý gửi biểu mẫu
-    const submitForm = async () => {
-        const confirmed = window.confirm("Bạn có chắc chắn đăng kí đồ án này?");
-        if (confirmed) {
-            setShowSubmitSuccess(true);
-            setTimeout(() => {
-                router.push("/dashboard/SV/SVProjects");
-            }, 2000); // Delay 2 giây 
+    const handleRemoveFile = (index: number) => {
+        setSelectedFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
+    };
+
+    const handleSubmit = () => {
+        if (formValid) {
+            setShowSuccess(true); // Hiện thông báo thành công
+            setShowError(false); // Ẩn thông báo lỗi
+        } else {
+            setShowSuccess(false);
+            setShowError(true); // Hiện thông báo lỗi nếu biểu mẫu không hợp lệ
         }
-    };
-
-    const closeModal = () => {
-        setShowSubmitSuccess(false); 
     };
 
     return (
@@ -67,127 +74,66 @@ export default function SVSignupProject() {
                 <title>Đăng ký đồ án</title>
             </Head>
             <Layout>
+                <div className="search">
+                    <input type="text" placeholder="Tìm kiếm đồ án..." className="search-bar" />
+                    <button className="register-btn">Đăng kí đồ án</button>
+                </div>
+
                 <div className="form-container">
                     <div className="form-group">
                         <label htmlFor="name">Tên đề tài:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            placeholder="Nhập tên đề tài"
-                            onChange={handleInputChange}
-                        />
+                        <input type="text" id="name" placeholder="Nhập tên đề tài" />
                     </div>
                     <div className="form-row">
                         <div className="form-group">
                             <label htmlFor="faculty">Khoa:</label>
-                            <input
-                                type="text"
-                                id="faculty"
-                                placeholder="Nhập khoa"
-                                onChange={handleInputChange}
-                            />
+                            <input type="text" id="faculty" placeholder="VD: Công nghệ thông tin" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="major">Chuyên ngành:</label>
-                            <input
-                                type="text"
-                                id="major"
-                                placeholder="Nhập chuyên ngành"
-                                onChange={handleInputChange}
-                            />
+                            <input type="text" id="major" placeholder="VD: Công nghệ phần mềm" />
                         </div>
                     </div>
                     <div className="form-row">
                         <div className="form-group">
-                            <label htmlFor="studentName">Tên sinh viên:</label>
-                            <input
-                                type="text"
-                                id="studentName"
-                                placeholder="Nhập tên sinh viên"
-                                onChange={handleInputChange}
-                            />
+                            <label htmlFor="student-name">Tên sinh viên:</label>
+                            <input type="text" id="student-name" placeholder="Nhập tên sinh viên" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="studentId">Mã số sinh viên:</label>
-                            <input
-                                type="text"
-                                id="studentId"
-                                placeholder="Nhập mã số sinh viên"
-                                onChange={handleInputChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label htmlFor="teacherName">Giảng viên hướng dẫn:</label>
-                            <input
-                                type="text"
-                                id="teacherName"
-                                placeholder="Nhập tên giảng viên"
-                                onChange={handleInputChange}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="projectLevel">Đồ án thuộc:</label>
-                            <select
-                                id="projectLevel"
-                                value={formData.projectLevel}
-                                onChange={handleSelectChange}
-                            >
-                                <option value="">Chọn loại đồ án</option>
-                                <option value="Cơ sở">Đồ án cơ sở</option>
-                                <option value="Chuyên ngành">Đồ án chuyên ngành</option>
-                                <option value="Tốt nghiệp">Đồ án tốt nghiệp</option>
-                            </select>
+                            <label htmlFor="student-id">Mã số sinh viên:</label>
+                            <input type="text" id="student-id" placeholder="VD: 2180601234" />
                         </div>
                     </div>
                     <div className="form-group">
                         <label htmlFor="description">Mô tả đề tài:</label>
-                        <textarea
-                            id="description"
-                            placeholder="Nhập mô tả đề tài"
-                            onChange={handleInputChange}
-                            onInput={(e) => {
-                                e.target.style.height = 'auto';
-                                e.target.style.height = `${e.target.scrollHeight}px`;
-                            }}
-                            style={{ overflow: 'hidden' }}
-                        ></textarea>
+                        <textarea id="description" placeholder="Nhập mô tả đề tài"></textarea>
                     </div>
                     <div className="list-file">
                         <div className="choice-file">
-                            <label htmlFor="fileInput" className="custom-upload">
-                                Chọn tập tin
-                            </label>
-                            <input
-                                type="file"
-                                id="fileInput"
-                                multiple
-                                onChange={handleFileChange}
-                            />
+                            <label htmlFor="fileInput" className="custom-upload">Chọn tập tin</label>
+                            <input type="file" id="fileInput" multiple onChange={handleFileChange} />
                         </div>
                         <ul id="fileList">
                             {selectedFiles.map((file, index) => (
                                 <li key={index}>
                                     {file.name}
-                                    <button onClick={() => setSelectedFiles(prev => prev.filter((_, i) => i !== index))}>Xóa</button>
+                                    <button onClick={() => handleRemoveFile(index)}>Xóa</button>
                                 </li>
                             ))}
                         </ul>
                     </div>
                     <div className="submit-container">
-                        <button
-                            type="button"
-                            className="submit-btn"
-                            onClick={submitForm}
-                        >
-                            Gửi
-                        </button>
+                        <button type="button" className="submit-btn" id="submit-btn" disabled={!formValid} onClick={handleSubmit}>Gửi</button>
                     </div>
-
-                    {showSubmitSuccess && (
-                        <div className="modal success-modal">
-                            <p>Đăng ký đồ án thành công!</p>
+                    {showSuccess && (
+                        <div id="successMessage" className="toast success-toast">
+                            <p>Đăng ký thành công!</p>
+                            <a id="back-btn" href="SVProjects" className="back-link">Quay lại</a>
+                        </div>
+                    )}
+                    {showError && (
+                        <div id="errorMessage" className="toast error-toast">
+                            <p>Thông tin chưa đầy đủ!</p>
                         </div>
                     )}
                 </div>

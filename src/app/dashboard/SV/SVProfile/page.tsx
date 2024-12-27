@@ -2,21 +2,10 @@
 
 import "./SVprofile.css";
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Layout from "@dashboard/Layout/page";
 
-export default function GVProfile() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    // Lấy trạng thái dark mode từ localStorage khi component mount
-    useEffect(() => {
-        const savedMode = localStorage.getItem("isDarkMode");
-        if (savedMode === "true") {
-            setIsDarkMode(true);
-            document.body.classList.add("dark");
-        }
-    }, []);
-
+export default function SVProfile() {
     return (
         <>
             <Head>
@@ -30,10 +19,7 @@ export default function GVProfile() {
             <Layout>
                 <div className="profile-card">
                     <div className="avatar">
-                        <img 
-                            src={isDarkMode ? "/profile.png" : "/darkavt.png"} 
-                            alt="Avatar" 
-                        />
+                        <img src="/profile.png" alt="Avatar"/>
                     </div>
                     <div className="info">
                         <h2>THÔNG TIN CÁ NHÂN</h2>

@@ -3,15 +3,19 @@
 import "./GVupfile.css";
 import Head from "next/head";
 import React, { useEffect } from "react";
+// import React from "react";
 import Layout from "@dashboard/Layout/page";
 
 export default function GVUpfile() {
     useEffect(() => {
+        // Xử lý danh sách file
+        // const fileInput = document.getElementById("fileInput");
         const fileList = document.getElementById("fileList");
+        // const fileCount = document.getElementById('fileCount');
         const existingFiles: string[] = [];
-        const existingDescription = "Mô tả mẫu, không thể chỉnh sửa"; 
+        const existingDescription = "";
 
-        
+        // Hiển thị danh sách file
         existingFiles.forEach((fileName) => {
             const li = document.createElement("li");
             li.textContent = fileName;
@@ -22,14 +26,13 @@ export default function GVUpfile() {
         const description = document.getElementById("description") as HTMLTextAreaElement;
         if (description) {
             description.value = existingDescription;
-            description.readOnly = true; 
         }
 
         // Điều chỉnh chiều cao textarea
         document.querySelector("textarea")?.addEventListener("input", function () {
             const textarea = this as HTMLTextAreaElement;
-            textarea.style.height = "auto"; 
-            textarea.style.height = textarea.scrollHeight + "px";
+            textarea.style.height = "auto"; // Đặt lại chiều cao trước khi tính toán lại
+            textarea.style.height = textarea.scrollHeight + "px"; // Điều chỉnh chiều cao theo nội dung
         });
     }, []);
 
@@ -44,7 +47,9 @@ export default function GVUpfile() {
                 <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet"/>
             </Head>
             <Layout>
-                
+                <div className="search">
+                    <input type="text" placeholder="Tìm kiếm đồ án..." className="search-bar"/>
+                </div>
                 <div className="upload-container">
                     <h2>Nội dung báo cáo</h2>
                     <div className="list-file">

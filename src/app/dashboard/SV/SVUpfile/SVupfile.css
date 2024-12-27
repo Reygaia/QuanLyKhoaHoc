@@ -38,56 +38,6 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
-body.dark .upload-container {
-    background-color: #000000;
-    color: #ccc;
-}
-body.dark .upload-container #description{
-    background-color: #373737;
-}
-body.dark .upload-container table tr{
-    background-color: #373737;
-    color: #ccc;
-}
-body.dark .project-list table td a{
-    color: #ccc;
-}
-body.dark .search-bar{
-    background-color: #373737;
-}
-body.dark .project-list section{
-    background-color: #000000;
-    color: white;
-}
-body.dark .project-list table th{
-    background-color: #373737;
-}
-body.dark .project-list table tr{
-    background-color: #373737;
-    color: #ccc;
-}
-body.dark .project-list table td a{
-    color: #ccc;
-}
-body.dark .search-bar {
-    background-color: #373737;
-}
-body.dark .project-list h2{
-    color: #fff;
-}
-body.dark .search a{
-    background-color: #373737;
-    color: #fff;
-    border: #fff solid 1px;
-}
-body.dark .upbtn{
-    background-color: #373737;
-    color: white;
-}
-body.dark .choice-file label{
-    background-color: #373737;
-    color: white;
-}
 .main-container {
     display: flex;
     width: 100%;
@@ -262,7 +212,7 @@ body.dark .choice-file label{
 }
 
 .button-link:hover {
-    background-color: #45a049;
+    background-color: #C4DFDF;
 }
 .upload-container{
     background-color: white;
@@ -275,7 +225,7 @@ body.dark .choice-file label{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0px;
+    padding: 0px 10px;
 }
 .custom-upload {
     display: inline-block;
@@ -287,11 +237,15 @@ body.dark .choice-file label{
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
+    transition: background-color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .custom-upload label {
     cursor: pointer;
+}
+.custom-upload:hover {
+    background-color: #C4DFDF;
 }
 
 input[type="file"] {
@@ -325,7 +279,7 @@ input[type="file"] {
     border: none;
     border-radius: 3px;
 }
-.upbtn {
+.upbtn a{
     display: inline-block;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -339,6 +293,10 @@ input[type="file"] {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid #dadada;
 }
+.upbtn a:hover{
+    background-color: #C4DFDF;
+}
+
 .form-group {
     margin: 10px;
 }

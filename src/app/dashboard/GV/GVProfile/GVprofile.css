@@ -38,15 +38,6 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
-body.dark .profile-card{
-    background-color: #000;
-}
-body.dark .info{
-    color: #f0f0f0;
-}
-body.dark .line{
-    border: #f0f0f0 solid 2px;
-}
 .main-container {
     display: flex;
     width: 100%;

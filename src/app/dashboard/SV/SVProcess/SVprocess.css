@@ -237,10 +237,6 @@ body.dark .search a{
     font-family: 'Play',sans-serif;
 }
 
-.register-btn:hover {
-    background-color: #45a049;
-}
-
 .settings-icon {
     font-size: 20px;
     cursor: pointer;
@@ -276,7 +272,12 @@ table th {
 }
 table a{
     text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
     color: #000000;
+}
+td :hover{
+    background-color: #C4DFDF;
 }
 
 .button-link {
@@ -293,5 +294,5 @@ table a{
 }
 
 .button-link:hover {
-    background-color: #45a049;
+    background-color: #C4DFDF;
 }
