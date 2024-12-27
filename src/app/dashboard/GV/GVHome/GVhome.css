@@ -35,6 +35,9 @@ body.dark .content{
     color: #CFCFCF;
     border: solid 20px #373737  ;
 }
+body.dark .content p{
+    color: white;
+}
 body.dark .content-container{
     background-color: #373737;
 }

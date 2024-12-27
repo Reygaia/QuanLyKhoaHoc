@@ -3,7 +3,6 @@
 import "./QLmanager.css";
 import Head from "next/head";
 import React, { useEffect } from "react";
-// import React from "react";
 import Layout from "@dashboard/Layout/page";
 
 export default function QLManager() {
@@ -12,6 +11,8 @@ export default function QLManager() {
         const teacherBtn = document.getElementById('teacherBtn');
         const studentForm = document.getElementById('Svform');
         const teacherForm = document.getElementById('Gvform');
+        const submitBtnSv = document.getElementById('submit-btn-sv');
+        const submitBtnGv = document.getElementById('submit-btn-gv');
 
         studentForm?.classList.add('hiddenform');
         teacherForm?.classList.add('hiddenform');
@@ -29,6 +30,22 @@ export default function QLManager() {
             teacherBtn?.classList.add('activeform');
             studentBtn?.classList.remove('activeform');
         });
+
+        // Hàm xóa nội dung trong form
+        const clearForm = (form) => {
+            const inputs = form.querySelectorAll('input');
+            inputs.forEach(input => input.value = '');
+        };
+
+        // Hàm xử lý tạo tài khoản
+        const handleAccountCreation = (form) => {
+            alert('Tạo tài khoản thành công!');
+            clearForm(form); // Xóa dữ liệu trong form
+        };
+
+        submitBtnSv?.addEventListener('click', () => handleAccountCreation(studentForm));
+        submitBtnGv?.addEventListener('click', () => handleAccountCreation(teacherForm));
+
     }, []);
 
     return (
@@ -88,11 +105,7 @@ export default function QLManager() {
                             </div>
                         </div>
                         <div className="submit-container">
-                            <button type="button" className="submit-btn" id="submit-btn">Tạo tài khoản</button>
-                        </div>
-                        <div id="successMessage" className="toast success-toast">
-                            <p>Tạo thành công!</p>
-                            <a id="back-btn" href="QLManager" className="back-link">Quay lại</a>
+                            <button type="button" className="submit-btn" id="submit-btn-sv">Tạo tài khoản</button>
                         </div>
                     </div>
                     {/*Form GV*/}
@@ -123,11 +136,7 @@ export default function QLManager() {
                             </div>
                         </div>
                         <div className="submit-container">
-                            <button type="button" className="submit-btn" id="submit-btn">Tạo tài khoản</button>
-                        </div>
-                        <div id="successMessage" className="toast success-toast">
-                            <p>Tạo thành công!</p>
-                            <a id="back-btn" href="QLManager" className="back-link">Quay lại</a>
+                            <button type="button" className="submit-btn" id="submit-btn-gv">Tạo tài khoản</button>
                         </div>
                     </div>
                 </div>

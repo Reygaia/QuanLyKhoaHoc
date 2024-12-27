@@ -36,18 +36,23 @@ body.dark .content{
     border: solid 20px #373737  ;
 }
 body.dark .content-container{
-    background-color: #373737;
+    background-color: black;
 }
 body.dark .toggle-btn.activeform{
     background-color: #6d6d6d;
 }
 body.dark .toggle-btn {
-    background-color: #000000;
+    background-color: #373737;
     color: #ccc;
 }
 body.dark .form-group input{
     background-color: #373737;
     color: #ccc;
+}
+body.dark .submit-container button{
+    background-color: #373737;
+    color: white;
+    border: 1px solid white;
 }
 .main-container {
     display: flex;
@@ -188,7 +193,8 @@ body.dark .form-group input{
     border: solid 20px #ffffff  ;
 }
 body.dark .cre-user{
-    background-color: #373737;
+    background-color: black;
+    color: white;
 }
 
 .content .hidden{

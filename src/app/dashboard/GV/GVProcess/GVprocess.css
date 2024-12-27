@@ -54,6 +54,9 @@ body.dark .project-list table td a{
 body.dark .search-bar{
     background-color: #373737;
 }
+body.dark .project-list h3{
+    color: white;
+}
 .main-container {
     display: flex;
     width: 100%;

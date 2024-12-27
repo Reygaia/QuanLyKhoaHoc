@@ -80,7 +80,6 @@ export default function SVSignupProject() {
                     <div className="form-row">
                         <div className="form-group">
                             <label htmlFor="faculty">Khoa:</label>
-
                             <input
                                 type="text"
                                 id="faculty"
@@ -96,12 +95,6 @@ export default function SVSignupProject() {
                                 placeholder="Nhập chuyên ngành"
                                 onChange={handleInputChange}
                             />
-                            <input type="text" id="faculty" placeholder="VD: Công nghệ thông tin" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="major">Chuyên ngành:</label>
-                            <input type="text" id="major" placeholder="VD: Công nghệ phần mềm" />
-
                         </div>
                     </div>
                     <div className="form-row">
@@ -146,9 +139,6 @@ export default function SVSignupProject() {
                                 <option value="Chuyên ngành">Đồ án chuyên ngành</option>
                                 <option value="Tốt nghiệp">Đồ án tốt nghiệp</option>
                             </select>
-                            <label htmlFor="student-id">Mã số sinh viên:</label>
-                            <input type="text" id="student-id" placeholder="VD: 2180601234" />
-
                         </div>
                     </div>
                     <div className="form-group">

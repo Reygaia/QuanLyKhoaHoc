@@ -7,6 +7,68 @@ body {
     color: #000000;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+body.dark{
+    background-color: #1E1E1E  ;
+}
+body.dark .form-container{
+    color: white;
+}
+body.dark .header{
+    background-color: #0d0d0d  ;
+}
+body.dark .sidebar {
+    background-color: #1E1E1E  ;
+    color: #f0f0f0;
+}
+body.dark .menu-item.active{
+    background-color: #454545 ;
+}
+body.dark .menu-item:hover{
+    background-color: #3D3D3D  ;
+}
+body.dark .drop-menu {
+    background-color: #1E1E1E  ;
+    color: #CFCFCF ;
+}
+body.dark .drop-menu .menu-list:hover {
+    background-color: #3D3D3D  ;
+}
+body.dark .content{
+    background-color: #1E1E1E ;
+    color: #CFCFCF;
+    border: solid 20px #373737  ;
+}
+body.dark .content-container{
+    background-color: #373737;
+}
+body.dark .form-group input{
+    background-color: #373737;
+    color: #ccc;
+}
+body.dark .form-group textarea{
+    background-color: #373737;
+}
+body.dark .form-container{
+    background-color: #000000;
+}
+body.dark .choice-file label{
+    background-color: #373737;
+    color:#ccc ;
+}
+body.dark .submit-container button{
+    background-color: #373737;
+    color: #ccc;
+    border: #CFCFCF 1px solid;
+}
+body.dark .submit-container button:hover{
+    background-color: #373737;
+    color: #ccc;
+}
+body.dark .form-group select{
+    background-color: #373737;
+    color: #f0f0f0;
+}
+
 .main-container {
     display: flex;
     width: 100%;
@@ -20,10 +82,10 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    z-index: 1000; 
+    background-color: #ffffff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     padding: 10px 20px;
 }
 
@@ -81,6 +143,7 @@ body {
 }
 
 .icon img {
+
     height: 40px;
     width: 40px;
     object-fit: contain;
@@ -110,16 +173,16 @@ body {
 .drop-menu {
     width: 200px;
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: 100%; 
+    right: 0; 
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
-    display: none;
-    z-index: 1000;
+    display: none; /* Mặc định ẩn */
+    z-index: 1000; /* Đảm bảo menu không bị che */
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* Di chuyển lên */
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -157,7 +220,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
-
+    
 }
 
 .search-bar {
@@ -198,7 +261,7 @@ body {
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
+    
 }
 
 .project-list h3 {
@@ -267,8 +330,8 @@ table th {
     box-sizing: border-box;
     font-family: 'Play', sans-serif;
     min-height: 50px;
-    overflow: hidden;
-    resize: none;
+    overflow: hidden; 
+    resize: none; 
 }
 
 .form-row {
@@ -355,10 +418,7 @@ table th {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0px 20px 0px;
-}
-#fileCount{
-    padding: 10px 0px;
+    padding: 20px 0px 10px 0px;
 }
 .custom-upload {
     display: inline-block;
@@ -385,7 +445,7 @@ table th {
 }
 
 input[type="file"] {
-    display: none;
+    display: none; 
 }
 .list-file {
     margin-top: 10px;
@@ -414,6 +474,54 @@ input[type="file"] {
     color: white;
     border: none;
     border-radius: 3px;
+}
+
+/* Thêm vào trong file SVSignupProject.css hoặc một file riêng cho modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+.form-group select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+    min-height: 50px;
+    overflow: hidden;
+    resize: none;
 }
 
 /*DARK MODE*/
@@ -449,5 +557,3 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
-
-/**/

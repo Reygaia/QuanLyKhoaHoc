@@ -8,6 +8,16 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
 }
+body.dark .profile-card{
+    background-color: #373737;
+}
+body.dark .info{
+    color: white;
+
+}
+body.dark .info .line{
+    border: white solid 2px;
+}
 
 /* Avatar (ảnh đại diện) */
 .avatar {
@@ -41,28 +51,7 @@
 .info .line{
     border: #000 solid 2px;
 }
-/**/
 
-/*Nút thay đổi thông tin*/
-/*.change-info-btn {*/
-/*    padding: 10px 20px;*/
-/*    font-size: 16px;*/
-/*    background-color: #ffffff;*/
-/*    color: #000;*/
-/*    border: none;*/
-/*    border-radius: 10px;*/
-/*    cursor: pointer;*/
-/*    transition: background-color 0.3s ease;*/
-/*    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.1);*/
-/*    position: absolute;*/
-/*    right: 40px;*/
-/*    min-width: 180px;*/
-/*    font-family: 'Play',sans-serif;*/
-/*}*/
-/*.change-info-btn:hover {*/
-/*    background-color: #C4DFDF;*/
-/*}*/
-/**/
 
 /*body {*/
 /*    margin: 0;*/

@@ -32,8 +32,11 @@ body.dark .drop-menu .menu-list:hover {
 }
 body.dark .content{
     background-color: #1E1E1E ;
-    color: #CFCFCF;
+
     border: solid 20px #373737  ;
+}
+body.dark .content p{
+    color: #CFCFCF;
 }
 body.dark .content-container{
     background-color: #373737;

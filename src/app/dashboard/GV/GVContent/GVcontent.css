@@ -40,6 +40,7 @@ body.dark .content-container{
 }
 body.dark .form-container{
     background-color: #000000;
+    color: white;
 }
 body.dark .form-group input{
     background-color: #373737;
