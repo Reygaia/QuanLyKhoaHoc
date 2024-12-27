@@ -1,6 +1,6 @@
-import { supabaseClientApp } from "@/app/libVar/supabase";
+import { supabaseClientApp } from "app/libVar/supabase";
 import { NextRequest, NextResponse } from "next/server";
-import { getSub, ExampleUser } from "../token/route";
+import { getSub, ExampleUser } from "app/api/token/authutil";
 
 const Client = supabaseClientApp;
 

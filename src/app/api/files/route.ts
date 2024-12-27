@@ -1,4 +1,4 @@
-import { supabaseClientApp } from "@/app/libVar/supabase";
+import { supabaseClientApp } from "app/libVar/supabase";
 import { NextRequest, NextResponse } from "next/server";
 
 const Client = supabaseClientApp;

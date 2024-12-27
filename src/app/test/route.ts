@@ -1,8 +1,8 @@
-import { Client } from "@/app/libVar/supabase";
+import { supabaseClientApp } from "app/libVar/supabase";
 import { NextResponse } from "next/server";
 
 async function readTable() {
-      const { data, error } = await Client.auth.admin.listUsers();
+      const { data, error } = await supabaseClientApp.auth.admin.listUsers();
 
       if (error) {
             throw new Error(`Error fetching users: ${error.message}`);
