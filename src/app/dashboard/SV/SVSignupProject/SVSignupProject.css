@@ -377,9 +377,6 @@ table th {
 .custom-upload label {
     cursor: pointer;
 }
-/*.custom-upload label {*/
-/*    cursor: pointer;*/
-/*}*/
 .custom-upload:hover {
     background-color: #C4DFDF;
 }

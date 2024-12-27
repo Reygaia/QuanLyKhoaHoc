@@ -212,7 +212,7 @@ body.dark .content-container{
 }
 
 .button-link:hover {
-    background-color: #45a049;
+    background-color: #C4DFDF;
 }
 .upload-container{
     background-color: white;
@@ -237,11 +237,15 @@ body.dark .content-container{
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
+    transition: background-color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .custom-upload label {
     cursor: pointer;
+}
+.custom-upload:hover {
+    background-color: #C4DFDF;
 }
 
 input[type="file"] {
@@ -289,6 +293,10 @@ input[type="file"] {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid #dadada;
 }
+.upbtn a:hover{
+    background-color: #C4DFDF;
+}
+
 .form-group {
     margin: 10px;
 }

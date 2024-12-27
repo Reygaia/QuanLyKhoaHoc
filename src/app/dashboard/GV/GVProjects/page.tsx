@@ -23,30 +23,30 @@ export default function GVProjects() {
                 </div>
                 <div className="project-list">
                     <section>
-                        <h3>Đồ án đang đợi duyệt</h3>
+                        <h3>Đồ án đang chờ duyệt</h3>
                         <table>
                             <thead>
                             <tr>
                                 <th>Tên</th>
                                 <th>Trạng thái</th>
-                                <th>Mô tả</th>
+                                <th>Ngày nộp</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td><a href="GVProcess" className="list">White Meet: Wukong</a></td>
-                                <td>Đã duyệt</td>
-                                <td>Game Online</td>
+                                <td><a href="GVContent" className="list">DragonBleaPiece</a></td>
+                                <td>Chờ duyệt</td>
+                                <td>07:48 - 04/12/2024</td>
                             </tr>
                             <tr>
-                                <td><a href="GVProcess">Cinema</a></td>
-                                <td>Chưa duyệt</td>
-                                <td>Website đặt vé xem phim</td>
+                                <td><a href="GVContent">AutoWinx</a></td>
+                                <td>Chờ duyệt</td>
+                                <td>13:20 - 30/11/2024</td>
                             </tr>
                             <tr>
-                                <td><a href="GVProcess">Wbg88</a></td>
-                                <td>Từ chối</td>
-                                <td>Website cá độ</td>
+                                <td><a href="GVContent">Bet88</a></td>
+                                <td>Chờ duyệt</td>
+                                <td>18:58 - 28/11/2024</td>
                             </tr>
                             </tbody>
                         </table>
