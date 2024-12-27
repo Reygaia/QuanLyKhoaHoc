@@ -55,6 +55,39 @@ body.dark .project-list table td a{
 body.dark .search-bar{
     background-color: #373737;
 }
+body.dark .project-list section{
+    background-color: #000000;
+    color: white;
+}
+body.dark .project-list table th{
+    background-color: #373737;
+}
+body.dark .project-list table tr{
+    background-color: #373737;
+    color: #ccc;
+}
+body.dark .project-list table td a{
+    color: #ccc;
+}
+body.dark .search-bar {
+    background-color: #373737;
+}
+body.dark .project-list h2{
+    color: #fff;
+}
+body.dark .search a{
+    background-color: #373737;
+    color: #fff;
+    border: #fff solid 1px;
+}
+body.dark .upbtn{
+    background-color: #373737;
+    color: white;
+}
+body.dark .choice-file label{
+    background-color: #373737;
+    color: white;
+}
 .main-container {
     display: flex;
     width: 100%;

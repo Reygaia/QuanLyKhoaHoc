@@ -15,7 +15,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-    const [role, setRole] = useState<"SV" | "GV" | "QL">("QL");
+    const [role, setRole] = useState<"SV" | "GV" | "QL">("SV");
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
     const pathname = usePathname();
     const router = useRouter();
