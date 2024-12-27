@@ -48,13 +48,13 @@ export default function QLContent() {
     // Xử lý khi duyệt đồ án
     const handleApprove = () => {
         alert("Đồ án đã được duyệt thành công!");
-        router.push("./QLProjects"); 
+        router.push("./QLActive"); 
     };
 
     // Xử lý khi không duyệt đồ án
     const handleReject = () => {
         alert("Đồ án không được duyệt!");
-        router.push("./QLProjects"); 
+        router.push("./QLActive"); 
     };
 
     return (
