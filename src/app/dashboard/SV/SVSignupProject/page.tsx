@@ -87,11 +87,11 @@ export default function SVSignupProject() {
                     <div className="form-row">
                         <div className="form-group">
                             <label htmlFor="faculty">Khoa:</label>
-                            <input type="text" id="faculty" placeholder="Nhập khoa" />
+                            <input type="text" id="faculty" placeholder="VD: Công nghệ thông tin" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="major">Chuyên ngành:</label>
-                            <input type="text" id="major" placeholder="Nhập chuyên ngành" />
+                            <input type="text" id="major" placeholder="VD: Công nghệ phần mềm" />
                         </div>
                     </div>
                     <div className="form-row">
@@ -101,7 +101,7 @@ export default function SVSignupProject() {
                         </div>
                         <div className="form-group">
                             <label htmlFor="student-id">Mã số sinh viên:</label>
-                            <input type="text" id="student-id" placeholder="Nhập mã số sinh viên" />
+                            <input type="text" id="student-id" placeholder="VD: 2180601234" />
                         </div>
                     </div>
                     <div className="form-group">

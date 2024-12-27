@@ -7,37 +7,6 @@ body {
     color: #000000;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-body.dark{
-    background-color: #1E1E1E  ;
-}
-body.dark .header{
-    background-color: #0d0d0d  ;
-}
-body.dark .sidebar {
-    background-color: #1E1E1E  ;
-    color: #f0f0f0;
-}
-body.dark .menu-item.active{
-    background-color: #454545 ;
-}
-body.dark .menu-item:hover{
-    background-color: #3D3D3D  ;
-}
-body.dark .drop-menu {
-    background-color: #1E1E1E  ;
-    color: #CFCFCF ;
-}
-body.dark .drop-menu .menu-list:hover {
-    background-color: #3D3D3D  ;
-}
-body.dark .content{
-    background-color: #1E1E1E ;
-    color: #CFCFCF;
-    border: solid 20px #373737  ;
-}
-body.dark .content-container{
-    background-color: #373737;
-}
 .main-container {
     display: flex;
     width: 100%;
@@ -112,7 +81,9 @@ body.dark .content-container{
 }
 
 .icon img {
-    height: px;
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
 }
 
 .content-container {
@@ -213,7 +184,7 @@ body.dark .content-container{
 }
 
 .register-btn:hover {
-    background-color: #45a049;
+    background-color: #C4DFDF;
 }
 
 .settings-icon {
@@ -263,7 +234,7 @@ table th {
 }
 
 .button-link:hover {
-    background-color: #45a049;
+    background-color: #C4DFDF;
 }
 .form-container {
     background-color: #fff;
@@ -329,15 +300,15 @@ table th {
 }
 
 .submit-btn:hover {
-    background-color: #45a049;
+    background-color: #C4DFDF;
 }
 .success-toast {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #4CAF50; /* Màu nền xanh */
-    color: white;
+    background-color: #ffffff; /* Màu nền */
+    color: black;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -354,6 +325,7 @@ table th {
     display: inline-block;
     padding: 8px 16px;
     background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: black;
     text-decoration: none;
     border-radius: 5px;
@@ -363,7 +335,7 @@ table th {
 }
 
 .back-link:hover {
-    background-color: #0056b3;
+    background-color: #C4DFDF;
 }
 #errorMessage p{
     color: red;
@@ -398,14 +370,18 @@ table th {
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
+    transition: background-color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .custom-upload label {
     cursor: pointer;
 }
-.custom-upload label {
-    cursor: pointer;
+/*.custom-upload label {*/
+/*    cursor: pointer;*/
+/*}*/
+.custom-upload:hover {
+    background-color: #C4DFDF;
 }
 
 input[type="file"] {
@@ -439,3 +415,39 @@ input[type="file"] {
     border: none;
     border-radius: 3px;
 }
+
+/*DARK MODE*/
+
+body.dark{
+    background-color: #1E1E1E  ;
+}
+body.dark .header{
+    background-color: #0d0d0d  ;
+}
+body.dark .sidebar {
+    background-color: #1E1E1E  ;
+    color: #f0f0f0;
+}
+body.dark .menu-item.active{
+    background-color: #454545 ;
+}
+body.dark .menu-item:hover{
+    background-color: #3D3D3D  ;
+}
+body.dark .drop-menu {
+    background-color: #1E1E1E  ;
+    color: #CFCFCF ;
+}
+body.dark .drop-menu .menu-list:hover {
+    background-color: #3D3D3D  ;
+}
+body.dark .content{
+    background-color: #1E1E1E ;
+    color: #CFCFCF;
+    border: solid 20px #373737  ;
+}
+body.dark .content-container{
+    background-color: #373737;
+}
+
+/**/
