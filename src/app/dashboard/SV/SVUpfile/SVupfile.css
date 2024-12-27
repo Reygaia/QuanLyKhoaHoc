@@ -38,6 +38,28 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
+body.dark .upload-container {
+    background-color: #000000;
+    color: #ccc;
+}
+body.dark .upload-container #description{
+    background-color: #373737;
+}
+body.dark ,.upload-container table tr{
+    background-color: #373737;
+    color: #ccc;
+}
+body.dark .project-list table td a{
+    color: #ccc;
+}
+body.dark .upbtn a{
+    background-color: #373737;
+    color: #f5f5f5;
+}
+body.dark .search input{
+    background-color: #373737;
+    color: white;
+}
 .main-container {
     display: flex;
     width: 100%;
@@ -186,7 +208,6 @@ body.dark .content-container{
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
-
 }
 
 .search-bar {
@@ -212,7 +233,7 @@ body.dark .content-container{
 }
 
 .button-link:hover {
-    background-color: #C4DFDF;
+    background-color: #45a049;
 }
 .upload-container{
     background-color: white;
@@ -237,24 +258,26 @@ body.dark .content-container{
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
-    transition: background-color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .custom-upload label {
     cursor: pointer;
 }
-.custom-upload:hover {
-    background-color: #C4DFDF;
-}
 
 input[type="file"] {
     display: none;
 }
 .list-file {
-    margin-top: 10px;
+    margin: 10px;
+    min-height: 40px;
 }
-
+.list-file p{
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .list-file ul {
     list-style: none;
     padding: 0;
@@ -293,10 +316,6 @@ input[type="file"] {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid #dadada;
 }
-.upbtn a:hover{
-    background-color: #C4DFDF;
-}
-
 .form-group {
     margin: 10px;
 }
@@ -328,4 +347,12 @@ input[type="file"] {
 
 .form-row .form-group {
     flex: 1;
+}
+body.dark .button-link{
+    background-color: #373737;
+    color: white;
+}
+body.dark .choice-file label{
+    background-color: #373737;
+    color: white;
 }

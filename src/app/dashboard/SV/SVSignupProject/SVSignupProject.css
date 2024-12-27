@@ -85,7 +85,42 @@ body {
     width: 40px;
     object-fit: contain;
 }
-
+ #projectLevel{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+    min-height: 50px;
+    overflow: hidden;
+    resize: none;
+}
+body.dark #projectLevel{
+    background-color: #373737;
+}
+body.dark .form-container{
+    background-color: #373737;
+    color: white;
+}
+body.dark .form-group input{
+    background-color: #373737;
+    color: white;
+}
+body.dark .form-group textarea{
+    background-color: #373737;
+    color: white;
+}
+body.dark .choice-file label{
+    background-color: #373737;
+    color: white;
+}
+body.dark .submit-container button{
+    background-color: #373737;
+    color: white;
+    border: white solid 1px;
+}
 .content-container {
     flex-grow: 1;
     display: flex;

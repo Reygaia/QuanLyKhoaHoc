@@ -3,17 +3,14 @@
 import "./GVupfile.css";
 import Head from "next/head";
 import React, { useEffect } from "react";
-// import React from "react";
 import Layout from "@dashboard/Layout/page";
 
 export default function GVUpfile() {
     useEffect(() => {
         // Xử lý danh sách file
-        // const fileInput = document.getElementById("fileInput");
         const fileList = document.getElementById("fileList");
-        // const fileCount = document.getElementById('fileCount');
         const existingFiles: string[] = [];
-        const existingDescription = "";
+        const existingDescription = "Nội dung mô tả sẵn có";
 
         // Hiển thị danh sách file
         existingFiles.forEach((fileName) => {
@@ -47,9 +44,6 @@ export default function GVUpfile() {
                 <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet"/>
             </Head>
             <Layout>
-                <div className="search">
-                    <input type="text" placeholder="Tìm kiếm đồ án..." className="search-bar"/>
-                </div>
                 <div className="upload-container">
                     <h2>Nội dung báo cáo</h2>
                     <div className="list-file">
@@ -58,7 +52,11 @@ export default function GVUpfile() {
                     </div>
                     <div className="form-group">
                         <label htmlFor="description">Mô tả:</label>
-                        <textarea id="description" placeholder="Thông tin mô tả của sinh viên."></textarea>
+                        <textarea 
+                            id="description" 
+                            placeholder="Thông tin mô tả của sinh viên."
+                            readOnly
+                        ></textarea>
                     </div>
                     <div className="upbtn">
                         <a href="GVProcess">Quay lại</a>
