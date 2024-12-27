@@ -1,15 +1,6 @@
 import "./Login.css";
 // import Image from "next/image";
 import Head from "next/head";
-<<<<<<< Updated upstream
-=======
-import { Play } from 'next/font/google'; // Dùng next/font thay vì @next/font
-
-const playFont = Play({
-    subsets: ['latin'],
-    weight: ['400', '700'], // Điều chỉnh độ đậm nếu cần
-});
->>>>>>> Stashed changes
 
 export default function Login() {
     return (
