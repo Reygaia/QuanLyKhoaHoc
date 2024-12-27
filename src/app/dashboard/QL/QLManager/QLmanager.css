@@ -7,6 +7,48 @@ body {
     color: #000000;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+body.dark{
+    background-color: #1E1E1E  ;
+}
+body.dark .header{
+    background-color: #0d0d0d  ;
+}
+body.dark .sidebar {
+    background-color: #1E1E1E  ;
+    color: #f0f0f0;
+}
+body.dark .menu-item.active{
+    background-color: #454545 ;
+}
+body.dark .menu-item:hover{
+    background-color: #3D3D3D  ;
+}
+body.dark .drop-menu {
+    background-color: #1E1E1E  ;
+    color: #CFCFCF ;
+}
+body.dark .drop-menu .menu-list:hover {
+    background-color: #3D3D3D  ;
+}
+body.dark .content{
+    background-color: #1E1E1E ;
+    color: #CFCFCF;
+    border: solid 20px #373737  ;
+}
+body.dark .content-container{
+    background-color: #373737;
+}
+body.dark .toggle-btn.activeform{
+    background-color: #6d6d6d;
+}
+body.dark .toggle-btn {
+    background-color: #000000;
+    color: #ccc;
+}
+body.dark .form-group input{
+    background-color: #373737;
+    color: #ccc;
+}
 .main-container {
     display: flex;
     width: 100%;
@@ -81,9 +123,7 @@ body {
 }
 
 .icon img {
-    height: 40px;
-    width: 40px;
-    object-fit: contain;
+    height: 36px;
 }
 
 .content-container {
@@ -110,16 +150,16 @@ body {
 .drop-menu {
     width: 200px;
     position: absolute;
-    top: 100%;
-    right: 0;
+    top: 100%; /* Hiển thị ngay bên dưới biểu tượng */
+    right: 0; /* Canh phải */
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
-    display: none;
-    z-index: 1000;
+    display: none; /* Mặc định ẩn */
+    z-index: 1000; /* Đảm bảo menu không bị che */
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* Di chuyển lên */
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -147,17 +187,19 @@ body {
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
     border: solid 20px #ffffff  ;
 }
+body.dark .cre-user{
+    background-color: #373737;
+}
+
 .content .hidden{
     transition: margin-left 0.3s ease-in-out;
     transform: translateX(-80%)
 }
-
 .search {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
-
 }
 
 .search-bar {
@@ -169,81 +211,14 @@ body {
     border-radius: 5px;
     font-family: 'Play',sans-serif;
 }
-
-.register-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Play',sans-serif;
-}
-
-.register-btn:hover {
-    background-color: #C4DFDF;
-}
-
-.settings-icon {
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.project-list section {
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-}
-
-.project-list h3 {
-    margin-top: 0;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table th, table td {
-    text-align: left;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-table th {
-    background-color: #f0f0f0;
-    font-weight: bold;
-}
-.button-link {
-    display: inline-block;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.button-link:hover {
-    background-color: #C4DFDF;
-}
-.form-container {
+.cre-user{
     background-color: #fff;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.form-container h2 {
+.cre-user h2 {
     margin-top: 0;
 }
 
@@ -279,6 +254,27 @@ table th {
 .form-row .form-group {
     flex: 1;
 }
+.option-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.toggle-btn{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Play',sans-serif;
+    min-width: 100px;
+    text-align: center;
+}
+
 .submit-container {
     display: flex;
     justify-content: center;
@@ -300,15 +296,21 @@ table th {
 }
 
 .submit-btn:hover {
-    background-color: #C4DFDF;
+    background-color: #45a049;
+}
+.hiddenform {
+    display: none;
+}
+.activeform{
+    background-color: #45a049;
 }
 .success-toast {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff; /* Màu nền */
-    color: black;
+    background-color: #4CAF50; /* Màu nền xanh */
+    color: white;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -320,12 +322,10 @@ table th {
     text-align: center;
 }
 
-/* Định dạng liên kết 'Quay lại' */
 .back-link {
     display: inline-block;
     padding: 8px 16px;
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: black;
     text-decoration: none;
     border-radius: 5px;
@@ -335,7 +335,7 @@ table th {
 }
 
 .back-link:hover {
-    background-color: #C4DFDF;
+    background-color: #0056b3;
 }
 #errorMessage p{
     color: red;
@@ -350,104 +350,3 @@ table th {
     pointer-events: none; /* Để hiệu ứng pháo hoa không chặn các thao tác với các phần tử khác */
     z-index: 1001;
 }
-
-.choice-file{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0px 20px 0px;
-}
-#fileCount{
-    padding: 10px 0px;
-}
-.custom-upload {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #000000;
-    background-color: #ffffff;
-    border: 1px solid #dadada;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.custom-upload label {
-    cursor: pointer;
-}
-/*.custom-upload label {*/
-/*    cursor: pointer;*/
-/*}*/
-.custom-upload:hover {
-    background-color: #C4DFDF;
-}
-
-input[type="file"] {
-    display: none;
-}
-.list-file {
-    margin-top: 10px;
-}
-
-.list-file ul {
-    list-style: none;
-    padding: 0;
-}
-
-.list-file li {
-    margin: 5px 0;
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.list-file li button {
-    margin-left: 10px;
-    padding: 2px 5px;
-    cursor: pointer;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 3px;
-}
-
-/*DARK MODE*/
-
-body.dark{
-    background-color: #1E1E1E  ;
-}
-body.dark .header{
-    background-color: #0d0d0d  ;
-}
-body.dark .sidebar {
-    background-color: #1E1E1E  ;
-    color: #f0f0f0;
-}
-body.dark .menu-item.active{
-    background-color: #454545 ;
-}
-body.dark .menu-item:hover{
-    background-color: #3D3D3D  ;
-}
-body.dark .drop-menu {
-    background-color: #1E1E1E  ;
-    color: #CFCFCF ;
-}
-body.dark .drop-menu .menu-list:hover {
-    background-color: #3D3D3D  ;
-}
-body.dark .content{
-    background-color: #1E1E1E ;
-    color: #CFCFCF;
-    border: solid 20px #373737  ;
-}
-body.dark .content-container{
-    background-color: #373737;
-}
-
-/**/
