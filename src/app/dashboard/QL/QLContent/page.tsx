@@ -3,18 +3,20 @@
 import "./QLcontent.css";
 import Head from "next/head";
 import React, { useEffect } from "react";
-// import React from "react";
+import { useRouter } from "next/navigation";
 import Layout from "@dashboard/Layout/page";
 
 export default function QLContent() {
+    const router = useRouter();
+
     useEffect(() => {
         const projectData = {
-            name: "",
-            faculty: "",
-            major: "",
-            studentName: "",
-            studentId: "",
-            description: "",
+            name: "Tên đề tài mẫu",
+            faculty: "Khoa Công nghệ thông tin",
+            major: "Khoa học máy tính",
+            studentName: "Nguyễn Văn A",
+            studentId: "2180601234",
+            description: "Mô tả ngắn gọn về đề tài.",
             files: ["Tài liệu 1.pdf", "Tài liệu 2.docx"]
         };
 
@@ -37,6 +39,16 @@ export default function QLContent() {
         loadProjectData();
     }, []);
 
+    const handleApprove = () => {
+        alert("Đồ án đã được duyệt!");
+        router.push("./QLActive"); // Chuyển về trang danh sách
+    };
+
+    const handleReject = () => {
+        alert("Đồ án không được duyệt!");
+        router.push("./QLActive"); // Chuyển về trang danh sách
+    };
+
     return (
         <>
             <Head>
@@ -52,39 +64,51 @@ export default function QLContent() {
                     <h2>Nội dung đăng ký đồ án</h2>
                     <div className="form-group">
                         <label htmlFor="name">Tên đề tài:</label>
-                        <input type="text" id="name" placeholder="Nhập tên đề tài"/>
+                        <input type="text" id="name" readOnly />
                     </div>
                     <div className="form-row">
                         <div className="form-group">
                             <label htmlFor="faculty">Khoa:</label>
-                            <input type="text" id="faculty" placeholder="Nhập khoa"/>
+                            <input type="text" id="faculty" readOnly />
                         </div>
                         <div className="form-group">
                             <label htmlFor="major">Chuyên ngành:</label>
-                            <input type="text" id="major" placeholder="Nhập chuyên ngành"/>
+                            <input type="text" id="major" readOnly />
                         </div>
                     </div>
                     <div className="form-row">
                         <div className="form-group">
                             <label htmlFor="student-name">Tên sinh viên:</label>
-                            <input type="text" id="student-name" placeholder="VD: Nguyễn Văn A"/>
+                            <input type="text" id="student-name" readOnly />
                         </div>
                         <div className="form-group">
                             <label htmlFor="student-id">Mã số sinh viên:</label>
-                            <input type="text" id="student-id" placeholder="VD: 2180601234"/>
+                            <input type="text" id="student-id" readOnly />
                         </div>
                     </div>
                     <div className="form-group">
                         <label htmlFor="description">Mô tả đề tài:</label>
-                        <textarea id="description" placeholder="Nhập mô tả về đề tài"></textarea>
+                        <textarea id="description" readOnly></textarea>
                     </div>
                     <div className="list-file">
                         <h2>File đính kèm</h2>
                         <ul id="fileList"></ul>
                     </div>
                     <div className="form-actions">
-                        <button id="approve-btn" className="btn-approve">Duyệt đồ án</button>
-                        <button id="reject-btn" className="btn-reject">Không duyệt</button>
+                        <button 
+                            id="approve-btn" 
+                            className="btn-approve" 
+                            onClick={handleApprove}
+                        >
+                            Duyệt đồ án
+                        </button>
+                        <button 
+                            id="reject-btn" 
+                            className="btn-reject" 
+                            onClick={handleReject}
+                        >
+                            Không duyệt
+                        </button>
                     </div>
                 </div>
             </Layout>

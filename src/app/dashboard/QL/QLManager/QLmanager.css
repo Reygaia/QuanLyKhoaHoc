@@ -49,6 +49,14 @@ body.dark .form-group input{
     background-color: #373737;
     color: #ccc;
 }
+body.dark .toggle-btn{
+    background-color: #373737;
+    border: white 1px solid;
+}
+body.dark .submit-container button{
+    background-color: #373737;
+    color: white;
+}
 .main-container {
     display: flex;
     width: 100%;
@@ -188,7 +196,8 @@ body.dark .form-group input{
     border: solid 20px #ffffff  ;
 }
 body.dark .cre-user{
-    background-color: #373737;
+    background-color: #000000;
+    color: white;
 }
 
 .content .hidden{

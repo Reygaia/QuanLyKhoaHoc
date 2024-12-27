@@ -40,12 +40,17 @@ body.dark .content-container{
 }
 body.dark .form-container{
     background-color: #000000;
+    color: white;
 }
 body.dark .form-group input{
     background-color: #373737;
 }
 body.dark .form-group textarea{
     background-color: #373737;
+}
+body.dark .form-actions button{
+    background-color: #373737;
+    color: white;
 }
 .main-container {
     display: flex;
@@ -353,7 +358,7 @@ input[type="file"] {
 .form-actions{
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 .btn-approve,
 .btn-reject{
