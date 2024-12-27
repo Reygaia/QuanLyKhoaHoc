@@ -15,7 +15,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-    const [role, setRole] = useState<"SV" | "GV" | "QL">("SV"); // Thay đổi role SV, GV, QL trong ngoặc tròn để chuyển đổi role giao diện
+    const [role, setRole] = useState<"SV" | "GV" | "QL">("QL"); // Thay đổi role SV, GV, QL trong ngoặc tròn để chuyển đổi role giao diện
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
     const pathname = usePathname();
     const router = useRouter();
@@ -119,7 +119,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <div className="settings-icon">
                     <img src={isDarkMode ? "/darkgear.png" : "/gear.png"} 
                      alt="settings" id="settings-icon" />
-                    <img src="/gear2.png" alt="settings" id="settings-icon" />
                     <div className="drop-menu" id="settings-menu">
                         <div className="menu-list" id="mode">Chế độ tối / sáng{" "}
                             <img src={isDarkMode ? "/moon.png" : "/summer.png"} alt="dark mode"/>
