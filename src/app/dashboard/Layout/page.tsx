@@ -15,7 +15,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-    const [role, setRole] = useState<"SV" | "GV" | "QL">("QL"); // Thay đổi role SV, GV, QL trong ngoặc tròn để chuyển đổi role giao diện
+    const [role, setRole] = useState<"SV" | "GV" | "QL">("GV"); // Thay đổi role SV, GV, QL trong ngoặc tròn để chuyển đổi role giao diện
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
     const pathname = usePathname();
     const router = useRouter();
