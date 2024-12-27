@@ -38,9 +38,11 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
+body.dark .project-list{
+    color: white;
+}
 body.dark .project-list section{
     background-color: #000000;
-    color: white;
 }
 body.dark .project-list table th{
     background-color: #373737;

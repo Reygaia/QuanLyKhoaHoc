@@ -38,22 +38,33 @@ body.dark .content{
 body.dark .content-container{
     background-color: #373737;
 }
-body.dark .project-list section{
+body.dark .content .form-container h2{
     background-color: #000000;
+    color: #ffffff;
+}
+body.dark .form-group input{
+    background-color: #373737;
+}
+body.dark .form-group textarea{
+    background-color: #373737;
+}
+body.dark .form-group select{
+    background-color: #373737;
     color: white;
 }
-body.dark .project-list table th{
+body.dark #approve-btn{
     background-color: #373737;
+    color: white;
+    border: #ccc solid 1px;
 }
-body.dark .project-list table tr{
+body.dark #reject-btn{
     background-color: #373737;
-    color: #ccc;
+    color: white;
+    border: #ccc solid 1px;
 }
-body.dark .project-list table td a{
-    color: #ccc;
-}
-body.dark .search-bar {
-    background-color: #373737;
+body.dark .form-container{
+    background-color: #000000;
+    color: white;
 }
 .main-container {
     display: flex;
@@ -197,91 +208,196 @@ body.dark .search-bar {
     transition: margin-left 0.3s ease-in-out;
     transform: translateX(-80%)
 }
-
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-
-}
-
-.search-bar {
-    flex-grow: 1;
-    padding: 10px;
-    font-size: 16px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: 'Play',sans-serif;
-}
-.button-link {
-    display: inline-block;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.button-link:hover {
-    background-color: #45a049;
-}
-.register-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Play',sans-serif;
-}
-
-.register-btn:hover {
-    background-color: #45a049;
-}
-
-.settings-icon {
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.project-list section {
-    margin-bottom: 20px;
+.form-container {
     background-color: #fff;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.project-list h3 {
+.form-container h2 {
     margin-top: 0;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.form-group {
+    margin-bottom: 15px;
 }
 
-table th, table td {
-    text-align: left;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-table th {
-    background-color: #f0f0f0;
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
     font-weight: bold;
-
 }
-table a{
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+    min-height: 50px;
+    overflow: hidden;
+    resize: none;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+.submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.submit-btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Play',sans-serif;
+    min-width: 100px;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+.success-toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50; /* Màu nền xanh */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Ban đầu ẩn */
+    z-index: 1000;
+    font-size: 28px;
+    width: 300px;
+    height: 150px;
+    text-align: center;
+}
+
+/* Định dạng liên kết 'Quay lại' */
+.back-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #ffffff;
+    color: black;
     text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.back-link:hover {
+    background-color: #0056b3;
+}
+#errorMessage p{
+    color: red;
+    font-weight: bold;
+}
+#fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none; /* Để hiệu ứng pháo hoa không chặn các thao tác với các phần tử khác */
+    z-index: 1001;
+}
+
+.choice-file{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+.custom-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
     color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-upload label {
+    cursor: pointer;
+}
+.custom-upload label {
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+.list-file {
+    margin: 10px 0px 30px 0px;
+}
+
+.list-file ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-file li {
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form-actions{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.btn-approve,
+.btn-reject{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Play',sans-serif;
+    min-width: 100px;
+    text-align: center;
+}
+.form-group select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+    min-height: 50px;
+    overflow: hidden;
+    resize: none;
 }
