@@ -7,7 +7,7 @@ if (!supabaseURL || !supabaseServiceKey) {
       throw new Error("Missing Supabase environment variables");
 }
 
-export const supabaseClient = createClient(supabaseURL, supabaseServiceKey, {
+export const supabaseClientApp = createClient(supabaseURL, supabaseServiceKey, {
       auth: {
             persistSession: true,
             storage: typeof window !== "undefined" ? localStorage : undefined, // For server-side, provide a different storage mechanism if needed

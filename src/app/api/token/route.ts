@@ -1,4 +1,4 @@
-import { supabaseClient } from "@/app/libVar/supabase";
+import { supabaseClientApp } from "@/app/libVar/supabase";
 import jwt from "jsonwebtoken";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -52,8 +52,8 @@ export async function POST(request: NextRequest) {
       }
 }
 
-async function loginUser(email: string, password: string) {
-      const { data, error } = await supabaseClient.auth.signInWithPassword({
+export async function loginUser(email: string, password: string) {
+      const { data, error } = await supabaseClientApp.auth.signInWithPassword({
             email,
             password,
       });
@@ -96,7 +96,7 @@ async function loginUser(email: string, password: string) {
 }
 
 async function getRole(userId: string) {
-      const { data, error } = await supabaseClient
+      const { data, error } = await supabaseClientApp
             .from("user_roles")
             .select("role_id")
             .eq("user_id", userId)
@@ -113,7 +113,7 @@ async function getRole(userId: string) {
       return null; // Return null if no data is found
 }
 
-async function getSub(token: string): Promise<string | null> {
+export async function getSub(token: string): Promise<string | null> {
       try {
             // Decode the token without verifying its signature (for extracting payload)
             const decodedToken = jwt.decode(token);
@@ -166,4 +166,40 @@ async function addCustomPropertyToToken(
             console.error("Error adding custom properties to token:", error);
             return null;
       }
+}
+export async function getTokenFromAuthorizationHeader(request: NextRequest) {
+      const authorizationHeader = request.headers.get("Authorization");
+      if (!authorizationHeader) {
+            return null;
+      }
+
+      const token = authorizationHeader.split(" ")[1];
+      if (!token) {
+            return null;
+      }
+
+      return token;
+}
+
+export async function ExampleUser(
+      email: string,
+      password: string
+): Promise<string | null> {
+      // Authenticate the user
+      const { data, error } = await supabaseClientApp.auth.signInWithPassword({
+            email,
+            password,
+      });
+
+      if (error || !data.session) {
+            console.error("Login error:", error || "No session found.");
+            return null;
+      }
+
+      // Extract the access token
+      const accessToken = data.session.access_token;
+      const id = data.session.user.id;
+      console.log("\nHere is the token b:", accessToken);
+
+      return id;
 }
