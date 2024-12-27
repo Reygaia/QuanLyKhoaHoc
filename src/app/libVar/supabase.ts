@@ -1,10 +1,15 @@
-import {createClient} from "@supabase/supabase-js";
+import { createClient } from "@supabase/supabase-js";
 
-const supabaseURL = process.env.SUPABASE_URL;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const supabaseURL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-if (!supabaseURL || !supabaseServiceKey ) {
-    throw new Error('Missing Supabase environment variables');
+if (!supabaseURL || !supabaseServiceKey) {
+      throw new Error("Missing Supabase environment variables");
 }
 
-export const supabaseClient = createClient(supabaseURL, supabaseServiceKey);
+export const supabaseClientApp = createClient(supabaseURL, supabaseServiceKey, {
+      auth: {
+            persistSession: true,
+            storage: typeof window !== "undefined" ? localStorage : undefined, // For server-side, provide a different storage mechanism if needed
+      },
+});
